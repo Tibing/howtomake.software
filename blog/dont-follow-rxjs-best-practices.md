@@ -1,16 +1,23 @@
 ---
-title: Don't follow RxJS Best Practices
-description: Don't follow RxJS Best Practices
+title: Don't follow rxjs best practices
 publish: true
-keywords: angular, rxjs, typescript, webdev
+description: >-
+  When web applications properly designed and coded users of assistive
+  technologies can use them easily. However, we’re not always paying…
+date: '2019-05-16T11:30:38.944Z'
 author: Nikita Poltoratsky
+keyword: angular, rxjs
 ---
 
-Nowadays more and more developers learn RxJS and use it properly with best practices in mind. But we shouldn't. All those so-called best practices require to learn something new and to add additional code in your projects.
-Moreover, using the best practices we're risking to create a good code base and make your teammates happy! 🌈
+# Don't follow rxjs best practices
+
+![](/assets/blog/cover.png)
+
+Nowadays more and more developers learn RxJS and write it properly with best practices in mind. But you shouldn't. All those so-called best practices require to learn something new and to add additional code in your projects.
+Moreover, using the best practices you're risking to create a good code base and make your teammates happy! 🌈
 Stop being a gray mass! Break the rules! Stop using best practices!
 
-Here are my suggestions to you on how to deal with those so-called RxJS best practices in Angular:
+Here are my suggestions to you on how to deal with those awful best practices:
 
 - [Don't unsubscribe](#dont-unsubscribe)
 - [Subscribe inside subscribe inside subscribe inside…](#subscribe-inside-subscribe)
@@ -24,9 +31,7 @@ Here are my suggestions to you on how to deal with those so-called RxJS best pra
 
 # Don't unsubscribe <a name="dont-unsubscribe"></a>
 
-Everybody says that we have to always unsubscribe from observables to prevent memory leaks.
-
-But I can't agree with it. Seriously, who decided that you have to unsubscribe from observables? You don't have to do that. Let's play a game! Which unsubscribe implementation of those Angular components is the best?
+Seriously, who decided that you have to unsubscribe from observables? You don't have to do that. Let's play a game - which unsubscribe implementation of those Angular components the best?
 
 That one with `takeUntil` operator?
 
@@ -57,7 +62,7 @@ export class MyComponent implements OnInit, OnDestroy {
   private alive = true;
   ngOnInit() {
     myInfiniteStream$
-      .pipe(takeWhile(() => this.alive))
+      .pipe(takeWhile(this.alive))
       .subscribe(() => ...);
   }
   ngOnDestroy() {
@@ -66,7 +71,7 @@ export class MyComponent implements OnInit, OnDestroy {
 }
 ```
 
-Exactly! Neither! Both `takeWhile` and `takeUntil` operators are implicit and may be hard to read 🤓 (sarcasm). The best solution is to store each subscription in a separate variable and then unsubscribe on component destroy in an explicit way:
+Exactly! Neither! Both `takeWhile` and `takeUntil` operators are implicit and may be hard to read 🤓. The best solution is to store each subscription in a separate variable and then unsubscribe on component destroy in an explicit way:
 
 ```typescript
 @Component({ ... })
@@ -100,13 +105,13 @@ export class MyComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.subscription1 = myInfiniteStream1$
       .subscribe(() => ...);
-        this.subscription2 = myInfiniteStream2$
+        this.subscription1 = myInfiniteStream2$
       .subscribe(() => ...);
-        this.subscription3 = myInfiniteStream3$
+        this.subscription1 = myInfiniteStream3$
       .subscribe(() => ...);
-        this.subscription4 = myInfiniteStream4$
+        this.subscription1 = myInfiniteStream4$
       .subscribe(() => ...);
-        this.subscription5 = myInfiniteStream5$
+        this.subscription1 = myInfiniteStream5$
       .subscribe(() => ...);
   }
 
@@ -115,7 +120,7 @@ export class MyComponent implements OnInit, OnDestroy {
     this.subscription2.unsubscribe();
     this.subscription3.unsubscribe();
     this.subscription4.unsubscribe();
-    this.subscription5.unsubscribe(); 
+    this.subscription5.unsubscribe();
   }
 }
 ```
@@ -142,26 +147,24 @@ Forget about it! 😅 Let's leave that job for the garbage collector, otherwise,
 
 # <a name="subscribe-inside-subscribe"></a> Use subscribe inside subscribe inside subscribe inside…
 
-Everybody says that we should use `*Map` operators to chain observables instead of subscribing inside subscribes to prevent callback hell.
-
-But I can't agree with it. Seriously, why not? Why should we use all those `switchMap`/`mergeMap` operators? How do you feel about that code? Easy to read? Do you really like your teammates so much?
+Seriously, why not? Why should we use all those `switchMap`/`mergeMap` operators? How do you feel about that code? Easy to read? Do you really like your teammates so much?
 
 ```typescript
 getUser().pipe(
   switchMap(user => getDetails(user)),
   switchMap(details => getPosts(details)),
-  switchMap(posts => getComments(posts)),
+  switchMap(posts => getComments(details)),
 )
 ```
 
-Don't you think it too neat and cute? You shouldn't write code that way! You have another choice, take a look here:
+Don't you think it over neat and cute? You shouldn't write code that way! You have another choice, take a look here:
 
 ```typescript
 getUser().subscribe(user => {
   getDetails(user).subscribe(details => {
     getPosts(details).subscribe(posts => {
-      getComments(posts).subscribe(comments => {  
-      
+      getComments(posts).subscribe(comments => {
+
         // handle all the data here
       });
     });
@@ -169,47 +172,24 @@ getUser().subscribe(user => {
 })
 ```
 
-Much better, huh?! Always write code this way if you hate your teammates and don't want to learn new RxJS operators.
+Much better, huh?! Always write code that way if you hate your teammates and don't want to learn new RxJS operators.
 
-Be bright! Let your team members feel a bit of nostalgia with callback hell.
+Be bright!🌈 Let your team members feel a bit of nostalgia with callback hell.
 
 ---
 
 # <a name="pure-functions"></a> Never use pure functions
 
-Everybody says that we should use pure functions to make our code predictable and easier to test.
-
-But I can't agree with it. Seriously, why should you use pure functions? Testability? Composability? It's hard, it would be much easier to affect the global world. Let's take a look at the example:
-
-```typescript
-function calculateTax(tax: number, productPrice: number) {
- return (productPrice * (tax / 100)) + productPrice; 
-}
-```
-
-For instance, we have a function which calculates a tax - it's a pure function it will always return the same result for the same parameters. It's easy to test and compose with other functions. But, do we really need that behavior? I don't think so. It would be easier to use a function without parameters:
-
-```typescript
-window.tax = 20;
-window.productPrice = 200;
-
-function calculateTax() {
- return (productPrice * (tax / 100)) + productPrice; 
-}
-```
-
-Indeed, what can go wrong? 😉
+Seriously, why should you use pure functions? Testability? Composability? It's hard, it would be much easier to affect the global world. Let's take a look at the example:
 
 ---
 
 # <a name="subscribe-manually"></a> Always subscribe manually, don't use async
 
-Everybody says that we have to use `async` pipe in Angular templates to facilitate subscriptions management in components.
-
-But I can't agree with it. We've already discussed subscriptions management with `takeUntil` and `takeWhile` and agreed that these operators are from an evil one. Though, why should we treat `async` pipe another way?
+We've already discussed subscriptions management with `takeUntil` and `takeWhile` and agreed that these operators are from an evil one. But exist one more danger here - async pipe.
 
 ```typescript
-@Component({  
+@Component({
   template: `
     <span>{{ data$ | async }}</span>
   `,
@@ -227,7 +207,7 @@ export class MyComponent implements OnInit {
 Do you see that? Clean, readable, easy to maintain code! Argh. It's not allowed. As for me, it would be much better to put the data in local variable and just use that variable in the template.
 
 ```typescript
-@Component({  
+@Component({
   template: `
     <span>{{ data }}</span>
   `,
@@ -236,7 +216,7 @@ export class MyComponent implements OnInit {
   data;
 
   ngOnInit() {
-    
+
     myInfiniteStream$
       .subscribe(data => this.data = data);
   }
@@ -267,11 +247,10 @@ export class DataService {
 }
 ```
 
-Here we're exposing data stream as observable. Just to make sure it can be changed only through a data service interface. But it confuses people.
-
+Here we're exposing data stream as observable. Just to make sure it can't be changed only through a data service interface.
+But it confuses people.
 You want to change the data - you have to change the data.
-
-Why add additional methods if we can change the data on the place? Let's rewrite the service to make it easier to use;
+Why write additional methods if we can change the data on the place? Let's rewrite the service to make it easier to use;
 
 ```typescript
 @Injectable({ providedIn: 'root' })
@@ -296,7 +275,7 @@ Have you ever heard about Smart/Dump components pattern, that can help us to dec
   `,
 })
 class ParentComponent implements OnInit {
-   
+
   data$: Observable<Data>;
 
   ngOnInit() {
@@ -322,7 +301,7 @@ Do you like it? Your teammates also like it. In case you want to revenge them, y
   `,
 })
 class ParentComponent {
-   
+
   data$ = this.http.get(...);
   ...
 }
@@ -355,15 +334,13 @@ Do you know what are marble diagrams? No? It's good for you!
 Let's assume we wrote the following function and going to test it:
 
 ```typescript
-export function numTwoTimes(obs: Observable<number>) {
-  return obs.pipe(map((x: number) => x * 2))
-}
+export const numTwoTimes = (obs: Observable<number>) => obs.pipe( map((x: number) => x * 2) );
 ```
 
 Many of us will use marble diagrams to test the function:
 
 ```typescript
-it('multiplies each number by 2', () => { 
+it('multiplies each number by 2', () => {
   createScheduler().run(({ cold, expectObservable }) => {
     const values = { a: 1, b: 2, c: 3, x: 2, y: 4, z: 6 }
     const numbers$ = cold('a-b-c-|', values) as Observable<number>;
@@ -406,14 +383,8 @@ Yeah! It looks one hundred times better now!
 
 ---
 
-## Conclusion
-
-You're a hero if you've read all the advice above. But. Well. If you recognized your train of thoughts, I have a piece of bad news for you. It was a joke.
-
-![](https://i.ibb.co/7zwMdyn/image.png)
+You're a hero if you've read all the advice above. But. Well. It was a joke. 😅 I just decided to cheer you up and make your day a little bit better. Hopefully, you've liked it.
 
 Please, never do what I said in that article. Never let your teammates cry and hate you. Always strive to be a decent and neat person. Save the world - use patterns and best practices!
-
-I just decided to cheer you up and make your day a little bit better. Hopefully, you like it.
 
 [Stay tuned](https://twitter.com/NikPoltoratsky) and let me know if you have any particular Angular topics you would like to hear about!

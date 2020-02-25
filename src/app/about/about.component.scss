@@ -1,0 +1,27 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 4rem;
+}
+
+a {
+  color: #36f;
+
+  &:hover {
+    color: #598bff;
+  }
+}
+
+img {
+  max-width: 700px;
+  object-fit: scale-down;
+  border-radius: 2px;
+}
+
+@media (max-width: 700px) {
+  img {
+    width: 100%;
+  }
+}

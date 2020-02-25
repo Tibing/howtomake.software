@@ -1,27 +1,17 @@
-import { AfterViewChecked, ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-
-import { HighlightService } from './highlight.service';
-import { MetadataService } from './metadata.service';
-
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ScullyRoute, ScullyRoutesService } from '@scullyio/ng-lib';
+import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-blog',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  selector: 'np-blog',
+  styleUrls: ['./blog.component.scss'],
   templateUrl: './blog.component.html',
-  styleUrls: ['./blog.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class BlogComponent implements OnInit, AfterViewChecked {
+export class BlogComponent {
 
-  constructor(private highlight: HighlightService,
-              private metadata: MetadataService) {
-  }
+  posts$: Observable<ScullyRoute[]> = this.scullyRoutesService.available$;
 
-  ngOnInit(): void {
-    this.highlight.highlightAll();
-
-  }
-
-  ngAfterViewChecked(): void {
-    this.metadata.trackMetadataChanges();
+  constructor(private scullyRoutesService: ScullyRoutesService) {
   }
 }

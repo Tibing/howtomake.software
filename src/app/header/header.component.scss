@@ -1,0 +1,133 @@
+:host {
+  font-family: 'BioRhyme', serif;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+a {
+  text-transform: uppercase;
+}
+
+a + a {
+  margin-left: 1rem;
+}
+
+.mobile {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+
+    nav {
+      background-color: rgba(256, 256, 256, 0.97);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease-in-out;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      ul {
+        transition: all 0.3s ease-in-out;
+
+        li {
+          opacity: 0;
+
+          a {
+            display: block;
+            padding: 10px 0;
+            text-align: center;
+            font-weight: bold;
+            transition: all 0.2s ease-in-out;
+            font-size: 3rem;
+
+            &:hover {
+              text-decoration: underline;
+            }
+
+            @media (max-width: 600px) {
+              font-size: 2rem;
+            }
+
+            @media (max-width: 400px) {
+              font-size: 1.5rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .toggle-btn {
+    display: block;
+    position: fixed;
+    z-index: 10;
+    right: 2rem;
+    top: 2rem;
+    cursor: pointer;
+
+    .bar {
+      width: 30px;
+      height: 2px;
+      margin: 7px auto;
+      background-color: rgba(0, 0, 0, 0.87);
+      transition: all 0.3s ease-in-out;
+
+      &:nth-child(2) {
+        width: 20px;
+      }
+    }
+  }
+
+  #toggle:checked {
+    & ~ nav {
+      opacity: 1;
+      visibility: visible;
+
+      ul {
+
+        li {
+          opacity: 1;
+
+          @for $i from 1 through 4 {
+            $t: $i * 0.1;
+            &:nth-child(#{$i}) {
+              transition: all 0.3s cubic-bezier(.6, 0, .8, 1.5) #{$t}s;
+            }
+          }
+        }
+      }
+    }
+
+    & + label.toggle-btn {
+      .bar {
+        &:nth-child(2) {
+          transform: translateX(50px);
+          opacity: 0;
+        }
+
+        &:nth-child(1) {
+          transform: translateY(10px) rotate(45deg);
+        }
+
+        &:nth-child(3) {
+          transform: translateY(-8px) rotate(-45deg);
+        }
+      }
+    }
+  }
+}
