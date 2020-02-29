@@ -1,7 +1,9 @@
-/* include CSS for prism toolbar */
 @import '~prismjs/plugins/toolbar/prism-toolbar.css';
-/* check node_modules/prismjs/themes/ for the available themes */
 @import '~prismjs/themes/prism-tomorrow';
+
+.light {
+  --font-color: balck;
+}
 
 body {
   font-family: 'Crimson Text', serif;
@@ -55,7 +57,7 @@ a, span, p, li {
 }
 
 a:link, a:visited, a:hover, a:active {
-  color: black;
+  color: var(--font-color);
   text-decoration: none;
 }
 
