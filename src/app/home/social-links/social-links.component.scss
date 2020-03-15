@@ -1,0 +1,51 @@
+@import '../../shadow-3d';
+
+:host {
+
+  .socials-container {
+    margin-bottom: 6rem;
+  }
+
+  .caption {
+    width: 170px;
+  }
+
+  .socials-caption {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    display: block;
+  }
+
+  .social-links {
+    @include shadow-3d(var(--pink), var(--turquise));
+    background-color: var(--pink);
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem;
+
+    .caption {
+      margin: 1rem 2rem 1rem 1rem;
+      font-weight: bold;
+
+      &:hover {
+        color: var(--white);
+      }
+    }
+  }
+
+  fa-icon {
+    margin-right: 0.5rem;
+  }
+
+  fa-icon::ng-deep svg {
+    height: 1.25rem;
+    width: 1.25rem;
+  }
+}
+
+@media (max-width: 960px) {
+  :host .socials-caption {
+    font-size: 2rem;
+  }
+}

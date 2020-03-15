@@ -11,6 +11,9 @@ import { ContributionsComponent } from './contributions/contributions.component'
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
+import { LetsGetAcquaintedComponent } from './home/lets-get-acquainted/lets-get-acquainted.component';
+import { SocialLinksComponent } from './home/social-links/social-links.component';
+import { PleaseReadMyBlogComponent } from './home/please-read-my-blog/please-read-my-blog.component';
 
 
 @NgModule({
@@ -21,6 +24,9 @@ import { AboutComponent } from './about/about.component';
     HomeComponent,
     AboutComponent,
     ContributionsComponent,
+    LetsGetAcquaintedComponent,
+    SocialLinksComponent,
+    PleaseReadMyBlogComponent,
   ],
   imports: [
     BrowserModule,

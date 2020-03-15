@@ -1,5 +1,8 @@
-:host {
-  font-family: 'BioRhyme', serif;
+@import '../shadow-3d';
+
+:host .home {
+  @include shadow-3d-with-hover(var(--pink), var(--turquise), var(--white), var(--blue), var(--black), var(--yellow));
+  padding: 0.5rem 3rem;
 }
 
 nav {

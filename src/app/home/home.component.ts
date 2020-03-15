@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { faDev, faGithubSquare, faMedium, faTwitterSquare } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'np-home',
@@ -8,8 +7,4 @@ import { faDev, faGithubSquare, faMedium, faTwitterSquare } from '@fortawesome/f
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeComponent {
-  twitter = faTwitterSquare;
-  medium = faMedium;
-  github = faGithubSquare;
-  dev = faDev;
 }

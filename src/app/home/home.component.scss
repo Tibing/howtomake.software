@@ -1,56 +1,13 @@
 :host {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  font-family: 'BioRhyme', serif;
+  justify-content: flex-start;
+  align-items: flex-start;
+  perspective: 400px;
+  max-width: 1110px;
+  margin: auto;
 
-  a, span, p, li {
-    font-size: 1rem;
-    line-height: 1;
-  }
-
-  h1 {
-    margin: 0;
-    font-size: 2rem;
-    text-align: center;
-  }
-
-  h2 {
-    margin-bottom: 3rem;
-  }
-
-  img {
-    border-radius: 50%;
-    object-fit: cover;
-    width: 200px;
-    height: 200px;
-    margin-bottom: 2rem;
-  }
-
-  .social-links {
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    list-style: none;
-    align-items: flex-start;
-  }
-
-  .social-link {
-    margin-right: 0;
-    margin-bottom: 1rem;
-  }
-
-  fa-icon {
-    margin-right: 0.5rem;
-  }
-
-  fa-icon::ng-deep svg {
-    height: 1rem;
-    width: 1rem;
+  .column {
+    padding-left: 6rem;
   }
 
   @media (min-width: 650px) {
@@ -58,9 +15,10 @@
       flex-direction: row;
       align-items: center;
     }
+  }
 
-    .social-link:not(:last-of-type) {
-      margin-right: 1rem;
-    }
+  @media (max-width: 800px) {
+    flex-direction: column;
+    align-items: center;
   }
 }

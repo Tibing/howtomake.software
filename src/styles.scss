@@ -1,22 +1,38 @@
 @import '~prismjs/plugins/toolbar/prism-toolbar.css';
 @import '~prismjs/themes/prism-tomorrow';
 
-.light {
+:root {
+  --blue: #4285f4;
+  --green: #34a853;
+  --yellow: #fbbc05;
+  --red: #ea4335;
+  --pink: #d65bad;
+  --turquise: #2dc4c0;
+  --black: black;
+  --white: white;
+  --light-yellow: #feefc3;
+  --purple: #9c26b0;
+  --deep-purple: #673AB7;
+  --light-blue: #01A9F3;
+  --teal: #009587;
+
   --font-color: balck;
+  --crazy-text-shadow: 6px 6px var(--blue),
+  12px 12px var(--green),
+  18px 18px var(--yellow),
+  24px 24px var(--red);
 }
 
 body {
-  font-family: 'Crimson Text', serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   margin: 0;
   padding: 2rem 6rem;
   box-sizing: border-box;
   height: 100vh;
   width: 100vw;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'BioRhyme', serif;
+  background-color: var(--light-yellow);
+  cursor: url("/assets/cursor.png"), auto;
 }
 
 h1 {
@@ -61,12 +77,8 @@ a:link, a:visited, a:hover, a:active {
   text-decoration: none;
 }
 
-a:hover {
-  text-decoration: underline;
-}
-
 a {
-  cursor: pointer;
+  cursor: url("/assets/cursor-blue.png"), pointer;
 }
 
 ul {
