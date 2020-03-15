@@ -38,3 +38,10 @@
 
   @include shadow-3d($from, $to)
 }
+
+@mixin crazy-shadow($step) {
+  text-shadow: $step $step var(--blue),
+  $step * 2 $step * 2 var(--green),
+  $step * 3 $step * 3 var(--yellow),
+  $step * 4 $step * 4 var(--red);
+}

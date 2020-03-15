@@ -1,8 +1,15 @@
+@import '../shadow-3d';
+
 :host {
   display: block;
   padding-top: 4rem;
 
   article {
     margin-bottom: 4rem;
+  }
+
+  h2 {
+    @include crazy-shadow(3px);
+    transform: rotateZ(-7deg);
   }
 }
