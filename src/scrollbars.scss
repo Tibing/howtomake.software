@@ -1,0 +1,18 @@
+@mixin scrollbars($fg, $bg, $size) {
+  &::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $fg;
+    cursor: pointer;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $bg;
+  }
+
+  scrollbar-face-color: $fg;
+  scrollbar-track-color: $bg;
+}

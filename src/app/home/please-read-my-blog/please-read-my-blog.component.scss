@@ -13,11 +13,18 @@
     display: block;
     transform: rotateZ(4deg);
     color: var(--white);
+    margin-bottom: 5rem;
 
     &:hover {
       @include shadow-3d(var(--light-blue), var(--purple));
       background-color: var(--light-blue);
       color: var(--black);
     }
+  }
+}
+
+@media (max-width: 600px) {
+  :host .blog-container {
+    transform: none;
   }
 }
