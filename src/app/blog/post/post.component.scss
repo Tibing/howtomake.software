@@ -1,9 +1,16 @@
+@import '../../shadow-3d';
+
 :host {
 
   display: block;
   padding-top: 4rem;
 
   ::ng-deep {
+
+    h1 {
+      @include crazy-shadow(3px);
+    }
+
     img {
       width: 100%;
     }
