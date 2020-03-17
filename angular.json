@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "poltoratsky"
+    }
+  },
+  "defaultProject": "poltoratsky",
+  "cli": {
+    "analytics": false
+  }
 }
