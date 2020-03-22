@@ -25,7 +25,7 @@
 }
 
 html {
-  @include scrollbars(var(--pink), var(--light-blue), 1rem);
+  overflow: hidden;
 }
 
 body {
@@ -35,6 +35,10 @@ body {
   box-sizing: border-box;
   background-color: var(--light-yellow);
   cursor: url("/assets/cursor.png"), auto;
+  overflow: auto;
+  height: 100vh;
+
+  @include scrollbars(var(--pink), var(--light-blue), 1rem);
 }
 
 h1 {
