@@ -4,6 +4,7 @@
 
   .socials-container {
     margin-bottom: 6rem;
+    padding-top: 2rem;
   }
 
   .caption {
@@ -59,5 +60,21 @@
 @media (max-width: 960px) {
   :host .socials-caption {
     font-size: 2rem;
+  }
+}
+
+@media (max-width: 800px) {
+  :host .socials-container {
+    padding-top: 0;
+  }
+
+  .socials-caption {
+    margin: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  :host .socials-container {
+    margin-bottom: 1rem;
   }
 }

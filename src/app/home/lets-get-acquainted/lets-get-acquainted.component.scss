@@ -70,9 +70,10 @@
     }
 
     .ava-container {
-      width: calc(300px - 2rem);
+      width: initial;
       transform: none;
-      margin-top: 2rem;
+      margin-top: 0;
+      margin-bottom: 1rem;
     }
   }
 }

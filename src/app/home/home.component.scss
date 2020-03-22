@@ -24,13 +24,12 @@
 
     .column {
       padding: 0;
-      max-width: 500px;
     }
   }
 
   @media (max-width: 600px) {
     .column {
-      max-width: 300px;
+      width: auto;
     }
   }
 }

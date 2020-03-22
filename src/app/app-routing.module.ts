@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'contributions', component: ContributionsComponent },
   {
     path: 'blog',
-    loadChildren: () => import('./blog/blog.module').then(m => m.BlogModule),
+    loadChildren: () => import('./stream/stream.module').then(m => m.StreamModule),
   },
 ];
 

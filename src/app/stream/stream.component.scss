@@ -1,0 +1,19 @@
+@import '../shadow-3d';
+
+:host {
+  display: block;
+  padding: 4rem 2rem;
+
+  article {
+    margin-bottom: 4rem;
+  }
+
+  h2 {
+    @include crazy-shadow(3px);
+    transform: rotateZ(-7deg);
+  }
+
+  .date {
+    margin-right: 1rem;
+  }
+}

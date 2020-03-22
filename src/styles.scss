@@ -32,7 +32,6 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
   margin: 0;
-  padding: 2rem 6rem;
   box-sizing: border-box;
   background-color: var(--light-yellow);
   cursor: url("/assets/cursor.png"), auto;
@@ -94,16 +93,4 @@ ul {
   display: block;
   max-width: 40rem;
   margin: auto;
-}
-
-@media (max-width: 700px) {
-  body {
-    padding: 2rem;
-  }
-}
-
-@media (max-width: 500px) {
-  body {
-    padding: 1rem;
-  }
 }
