@@ -7,13 +7,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app/app.component';
 import { LayoutComponent } from './layout/layout.component';
-import { ContributionsComponent } from './contributions/contributions.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
-import { LetsGetAcquaintedComponent } from './home/lets-get-acquainted/lets-get-acquainted.component';
-import { SocialLinksComponent } from './home/social-links/social-links.component';
-import { PleaseReadMyBlogComponent } from './home/please-read-my-blog/please-read-my-blog.component';
+import { MeComponent } from './home/me/me.component';
+import { BlogComponent } from './home/blog/blog.component';
 
 
 @NgModule({
@@ -23,10 +21,8 @@ import { PleaseReadMyBlogComponent } from './home/please-read-my-blog/please-rea
     HeaderComponent,
     HomeComponent,
     AboutComponent,
-    ContributionsComponent,
-    LetsGetAcquaintedComponent,
-    SocialLinksComponent,
-    PleaseReadMyBlogComponent,
+    MeComponent,
+    BlogComponent,
   ],
   imports: [
     BrowserModule,

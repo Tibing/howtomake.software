@@ -1,0 +1,43 @@
+:host {
+  margin-left: 10rem;
+  margin-top: 4rem;
+  display: block;
+}
+
+.me-container {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  width: 404px;
+  height: 479px;
+  background-color: var(--pink);
+  border-radius: 50%;
+}
+
+.me {
+  // TODO remove
+  margin-right: -48px;
+  margin-bottom: -34px;
+}
+
+.lightning {
+  position: absolute;
+}
+
+.light-1 {
+  top: -4rem;
+  left: -5rem;
+}
+
+.light-2 {
+  top: 0;
+  right: -5rem;
+  transform: scale(0.7) rotate(1deg) scaleX(-1);
+}
+
+.light-3 {
+  transform: scale(0.5) rotate(-38deg);
+  left: -8rem;
+  top: 5rem;
+}

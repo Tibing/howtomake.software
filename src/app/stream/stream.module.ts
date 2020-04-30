@@ -3,7 +3,7 @@ import {NgModule} from '@angular/core';
 import {ScullyLibModule} from '@scullyio/ng-lib';
 
 import {StreamRoutingModule} from './stream-routing.module';
-import {StreamComponent} from './stream.component';
+import {StreamComponent} from './stream/stream.component';
 import { PostComponent } from './post/post.component';
 
 

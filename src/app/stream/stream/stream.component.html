@@ -1,5 +1,5 @@
 <ul class="container">
-  <li *ngFor="let post of posts$ | async">
+  <li *ngFor="let post of stream$ | async">
 
     <article>
       <a [routerLink]="post.route">

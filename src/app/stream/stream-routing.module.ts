@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { StreamComponent } from './stream.component';
+import { StreamComponent } from './stream/stream.component';
 import { PostComponent } from './post/post.component';
 
 const routes: Routes = [

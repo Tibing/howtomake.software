@@ -3,11 +3,12 @@
 @import 'scrollbars';
 
 :root {
+  --yellow: #FFDF27;
+  --pink: #FF5971;
+
   --blue: #4285f4;
   --green: #34a853;
-  --yellow: #fbbc05;
   --red: #ea4335;
-  --pink: #d65bad;
   --turquise: #2dc4c0;
   --black: black;
   --white: white;
@@ -24,21 +25,9 @@
   24px 24px var(--red);
 }
 
-html {
+html, body {
   overflow: hidden;
-}
-
-body {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 400;
   margin: 0;
-  box-sizing: border-box;
-  background-color: var(--light-yellow);
-  cursor: url("/assets/cursor.png"), auto;
-  overflow: auto;
-  height: 100vh;
-
-  @include scrollbars(var(--pink), var(--light-blue), 1rem);
 }
 
 h1 {
@@ -94,7 +83,7 @@ ul {
 }
 
 .container {
-  display: block;
-  max-width: 40rem;
   margin: auto;
+  display: block;
+  max-width: 1440px;
 }
