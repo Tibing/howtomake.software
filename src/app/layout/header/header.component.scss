@@ -1,0 +1,40 @@
+:host {
+  border-bottom: 1px solid var(--black);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  right: 0;
+}
+
+.header {
+  background-color: white;
+  padding: 1rem 1.5rem;
+}
+
+a {
+  color: var(--blue);
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &.hide {
+    display: none;
+  }
+}
+
+.angular-cdk-crash-course {
+  padding: 0.5rem;
+  background-color: var(--blue);
+  color: var(--yellow);
+  text-align: center;
+  display: block;
+  box-sizing: border-box;
+  width: 100vw;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+

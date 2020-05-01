@@ -6,7 +6,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app/app.component';
 import { LayoutComponent } from './layout/layout.component';
-import { HeaderComponent } from './header/header.component';
+import { HeaderComponent } from './layout/header/header.component';
 import { HomeComponent } from './home/home.component';
 import { MeComponent } from './home/me/me.component';
 import { BlogComponent } from './home/blog/blog.component';

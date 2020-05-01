@@ -66,5 +66,10 @@ $clip-offset: 16px;
 
   .clip {
     padding: 1rem;
+    width: auto;
+
+    span {
+      width: auto;
+    }
   }
 }
