@@ -1,6 +1,8 @@
 :host {
   --home-height: 900px;
   --home-min-height: 100vh;
+
+  user-select: none;
 }
 
 .home-container {
@@ -148,7 +150,6 @@ app-blog {
   }
 
   .left-pattern-container {
-    //position: relative;
     width: 100%;
     height: 500px;
   }
@@ -157,14 +158,16 @@ app-blog {
     height: 500px;
   }
 
-  .left-pattern {
-  }
-
   .right-pattern-container {
     display: none;
   }
 
   .right-pattern-angle {
     display: none;
+  }
+
+  app-acquainted {
+    margin-top: 1rem;
+    margin-bottom: 4rem;
   }
 }
