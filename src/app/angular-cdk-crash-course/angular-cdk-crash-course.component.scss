@@ -9,6 +9,10 @@ a:hover {
   cursor: pointer;
 }
 
+p, h2 {
+  padding: 0 1rem;
+}
+
 :host {
   font-family: 'Roboto', sans-serif;
   display: block;
@@ -159,6 +163,7 @@ iframe {
     justify-content: space-between;
     width: 100%;
     font-weight: bold;
+    background-color: white;
 
     div {
       display: flex;
@@ -247,13 +252,45 @@ iframe {
     font-size: 15px;
   }
 
-  a {
+  .contact-me-btn {
     background-color: white;
     color: var(--primary);
     padding: 1rem 2rem;
     border: none;
     border-radius: 50px;
     margin-right: 1rem;
+  }
+
+  .social-links {
+    display: flex;
+    margin-bottom: 4rem;
+  }
+
+  .link:not(:last-of-type) {
+    margin-right: 1.5rem;
+  }
+
+  .link, svg {
+    width: 72px;
+    height: 72px;
+  }
+
+  .background {
+    fill: white;
+  }
+
+  .inside {
+    fill: var(--primary);
+  }
+
+  .link:hover {
+    .background {
+      fill: var(--primary);
+    }
+
+    .inside {
+      fill: white;
+    }
   }
 }
 
@@ -319,6 +356,23 @@ iframe {
 
     .topic-list {
       width: 100%;
+    }
+  }
+}
+
+
+@media (max-width: 768px) {
+  .trainer .link:not(:last-of-type) {
+    margin-right: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .hero .hero-btns {
+    flex-direction: column;
+
+    a:first-of-type {
+      margin: 0 0 1rem;
     }
   }
 }
