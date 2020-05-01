@@ -8,6 +8,10 @@
   cursor: initial;
 }
 
+a {
+  line-height: initial;
+}
+
 a:hover {
   cursor: pointer;
 }
@@ -53,6 +57,7 @@ iframe {
   background: url('/assets/angular-cdk-crash-course/hero.png');
   background-size: 100vw 100vh;
   flex-direction: column;
+  margin-top: 100px;
 
   .material {
     width: 179px;
@@ -377,5 +382,10 @@ iframe {
     a:first-of-type {
       margin: 0 0 1rem;
     }
+  }
+
+  .subscribe > div {
+    background-size: cover;
+    height: 300px;
   }
 }

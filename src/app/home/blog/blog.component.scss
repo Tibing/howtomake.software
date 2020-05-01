@@ -76,9 +76,9 @@
   }
 
   .content {
-    width: 250px;
+    width: 330px;
     line-height: 30px;
-    font-size: 32px;
+    font-size: 40px;
     top: 9.5rem;
     left: 6rem;
   }
@@ -114,10 +114,16 @@
   }
 }
 
+@media (max-width: 525px) {
+  .content {
+    left: 20vw;
+  }
+}
+
 @media (max-width: 400px) {
 
   .content {
     top: 11rem;
-    left: 3rem;
+    left: 2rem;
   }
 }
