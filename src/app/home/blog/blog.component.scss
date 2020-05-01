@@ -1,5 +1,6 @@
-:host{
+:host {
   --home-cloud-color: red;
+  position: relative;
 }
 
 .right-pattern-container {
@@ -11,7 +12,6 @@
 }
 
 .right-pattern {
-  background: url("/assets/home/cloud.svg") no-repeat center center;
   background-size: cover;
   width: 636px;
   height: 512px;
@@ -19,19 +19,24 @@
   align-items: center;
   justify-content: center;
   margin-left: 4rem;
+}
 
-  &:hover {
-    .content {
-      color: var(--blue);
-    }
+.right-pattern-container:hover {
+  .cloud {
+    fill: var(--blue);
+  }
+
+  .content {
+    color: white;
   }
 }
 
 .content {
-  margin-top: -5rem;
-  margin-right: -3rem;
+  top: 8rem;
+  left: 14rem;
   line-height: 60px;
   width: 400px;
+  position: absolute;
 }
 
 @media (max-width: 1280px) {
@@ -43,14 +48,14 @@
   }
 
   .right-pattern {
-    width: 500px;
-    height: 376px;
+    width: 550px;
+    height: 426px;
     margin-left: 0;
   }
 
   .content {
-    margin-top: -4rem;
-    margin-right: -6rem;
+    top: 10.5rem;
+    left: 7rem;
     line-height: 50px;
   }
 }
@@ -64,8 +69,8 @@
   }
 
   .right-pattern {
-    width: 350px;
-    height: 263px;
+    width: 400px;
+    height: 313px;
     margin-left: 0;
   }
 
@@ -73,8 +78,8 @@
     width: 250px;
     line-height: 30px;
     font-size: 32px;
-    margin-top: -3rem;
-    margin-right: -3rem;
+    top: 9.5rem;
+    left: 6rem;
   }
 }
 
@@ -92,19 +97,26 @@
 
   .right-pattern-container {
     padding-top: 1rem;
-    margin-left: -222px;
-    height: 600px;
-    width: 600px;
+    margin-left: -110vw;
+    height: 250vw;
+    width: 250vw;
   }
 
   .right-pattern {
     align-items: flex-start;
-    height: 460px;
-    width: 600px;
+    height: 200vw;
+    width: 250vw;
   }
 
   .content {
-    margin-top: 7rem;
-    margin-left: 10rem;
+    left: 30vw;
+  }
+}
+
+@media (max-width: 400px) {
+
+  .content {
+    top: 11rem;
+    left: 3rem;
   }
 }
