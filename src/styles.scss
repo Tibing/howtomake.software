@@ -30,6 +30,7 @@ html, body {
   margin: 0;
   background-color: var(--yellow);
   overflow-x: hidden;
+  cursor: url("/assets/cursor.png"), pointer;
 }
 
 h1 {
@@ -74,9 +75,9 @@ a:link, a:visited, a:hover, a:active {
   text-decoration: none;
 }
 
-//a {
-  //cursor: url("/assets/cursor-blue.png"), pointer;
-//}
+a {
+  cursor: url("/assets/cursor-hover.png"), pointer;
+}
 
 ul {
   margin: 0;
