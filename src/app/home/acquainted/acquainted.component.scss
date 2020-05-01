@@ -1,0 +1,35 @@
+@mixin clip($color) {
+  width: 560px;
+  height: 94px;
+  background-color: $color;
+  clip-path: polygon(100% 1%, 95% 50%, 100% 100%, 0 100%, 5% 50%, 0 0);
+}
+
+:host {
+  position: relative;
+}
+
+.clip, .clip-shadow {
+  position: absolute;
+}
+
+.clip {
+  @include clip(var(--yellow));
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clip-shadow {
+  @include clip(var(--black));
+
+  top: 1rem;
+  left: -2rem
+}
+
+.lets-get-acquinted {
+  width: 450px;
+  color: var(--blue);
+  text-align: center;
+}

@@ -5,12 +5,12 @@
 :root {
   --yellow: #FFDF27;
   --pink: #FF5971;
+  --black: #313033;
+  --blue: #4620FC;
 
-  --blue: #4285f4;
   --green: #34a853;
   --red: #ea4335;
   --turquise: #2dc4c0;
-  --black: black;
   --white: white;
   --light-yellow: #feefc3;
 
@@ -64,7 +64,7 @@ p {
 }
 
 a, span, p, li {
-  font-size: 1.25rem;
+  font-size: 22px;
   line-height: 1.5;
 }
 
@@ -92,4 +92,8 @@ ul {
 .font-faster-one {
   font-family: 'Faster One', cursive;
   font-size: 48px;
+}
+
+.font-fira-mono {
+  font-family: 'Fira Mono', monospace;
 }

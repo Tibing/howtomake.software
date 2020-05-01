@@ -9,9 +9,10 @@ import { AppComponent } from './app/app.component';
 import { LayoutComponent } from './layout/layout.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
 import { MeComponent } from './home/me/me.component';
 import { BlogComponent } from './home/blog/blog.component';
+import { AcquaintedComponent } from './home/acquainted/acquainted.component';
+import { SocialsComponent } from './home/socials/socials.component';
 
 
 @NgModule({
@@ -20,9 +21,10 @@ import { BlogComponent } from './home/blog/blog.component';
     LayoutComponent,
     HeaderComponent,
     HomeComponent,
-    AboutComponent,
     MeComponent,
     BlogComponent,
+    AcquaintedComponent,
+    SocialsComponent,
   ],
   imports: [
     BrowserModule,
