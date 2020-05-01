@@ -3,13 +3,6 @@ $clip-width: 560px;
 $clip-shadow-width: 594px;
 $clip-offset: 16px;
 
-@mixin clip($color) {
-  width: $clip-width;
-  height: $clip-height;
-  background-color: $color;
-  clip-path: polygon(100% 1%, 95% 50%, 100% 100%, 0 100%, 5% 50%, 0 0);
-}
-
 :host {
   position: relative;
   display: block;
@@ -25,11 +18,17 @@ $clip-offset: 16px;
   width: $clip-width;
   height: $clip-height;
   background-color: var(--yellow);
+  color: var(--blue);
   clip-path: polygon(100% 1%, 95% 50%, 100% 100%, 0 100%, 5% 50%, 0 0);
 
   display: flex;
   align-items: center;
   justify-content: center;
+
+  &:hover {
+    background-color: var(--blue);
+    color: var(--yellow);
+  }
 }
 
 .clip-shadow {
@@ -44,7 +43,6 @@ $clip-offset: 16px;
 
 .lets-get-acquinted {
   width: 450px;
-  color: var(--blue);
   text-align: center;
 }
 

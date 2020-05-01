@@ -1,3 +1,7 @@
+:host{
+  --home-cloud-color: red;
+}
+
 .right-pattern-container {
   background: url("/assets/home/pattern-2.svg") no-repeat center center;
   background-size: cover;
@@ -15,6 +19,12 @@
   align-items: center;
   justify-content: center;
   margin-left: 4rem;
+
+  &:hover {
+    .content {
+      color: var(--blue);
+    }
+  }
 }
 
 .content {
