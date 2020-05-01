@@ -1,0 +1,21 @@
+.right-pattern-container {
+  background: url("/assets/home/pattern-2.svg") no-repeat;
+  height: 600px;
+}
+
+.right-pattern {
+  background: url("/assets/home/cloud.svg") no-repeat;
+  width: 636px;
+  height: 512px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 4rem;
+}
+
+.content {
+  margin-top: -5rem;
+  margin-right: -3rem;
+  line-height: 60px;
+  width: 400px;
+}

@@ -13,6 +13,7 @@
   --black: black;
   --white: white;
   --light-yellow: #feefc3;
+
   --purple: #9c26b0;
   --deep-purple: #673AB7;
   --light-blue: #01A9F3;
@@ -86,4 +87,9 @@ ul {
   margin: auto;
   display: block;
   max-width: 1440px;
+}
+
+.font-faster-one {
+  font-family: 'Faster One', cursive;
+  font-size: 48px;
 }
