@@ -13,6 +13,22 @@
   display: block;
 }
 
+.angular-cdk-crash-course {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  padding: 0.5rem;
+  background-color: var(--blue);
+  color: var(--yellow);
+  text-align: center;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 .left-pattern-container {
   background: linear-gradient(244.18deg, #FF5971 55.69%, #421FFF 100%);
   width: 45vw;
