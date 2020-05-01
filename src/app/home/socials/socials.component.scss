@@ -1,0 +1,12 @@
+.social-links {
+  display: flex;
+}
+
+.link:not(:last-of-type) {
+  margin-right: 1.5rem;
+}
+
+.link {
+  width: 72px;
+  height: 72px;
+}

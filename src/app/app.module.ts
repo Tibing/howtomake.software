@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ScullyLibModule } from '@scullyio/ng-lib';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -30,7 +29,6 @@ import { SocialsComponent } from './home/socials/socials.component';
     BrowserModule,
     AppRoutingModule,
     ScullyLibModule,
-    FontAwesomeModule,
     ReactiveFormsModule,
   ],
   bootstrap: [AppComponent],

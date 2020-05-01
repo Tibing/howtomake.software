@@ -36,5 +36,39 @@
   z-index: 1;
   position: absolute;
   top: 0;
+  padding-top: 64px;
   display: flex;
+}
+
+.column {
+  margin-left: 10rem;
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+app-acquainted {
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
+
+@media (max-width: 1280px) {
+
+  .left-pattern-container {
+    width: 40vw;
+  }
+
+  .right-pattern-container {
+    width: 60vw;
+  }
+
+  .column {
+    margin-left: 5rem;
+  }
+
+  app-blog {
+    margin-left: -4rem;
+  }
 }
