@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1170" height="240" fill="none">
+  <defs/>
+  <rect width="1170" height="240" fill="url(#paint0_linear)" rx="10"/>
+  <mask id="a" width="1170" height="240" x="0" y="0" maskUnits="userSpaceOnUse">
+    <rect width="1170" height="240" fill="#fff" rx="10"/>
+  </mask>
+  <g clip-rule="evenodd" mask="url(#a)">
+    <path fill="#F5F8FC" fill-opacity=".16" fill-rule="evenodd" stroke="#fff" stroke-opacity=".2" d="M1068.18-265.671L701-132.157l55.447 494 311.733 176.486 312.14-176.486 56.68-494-368.82-133.514z"/>
+    <path stroke="#fff" stroke-width="2" d="M-79.822-265.671v0L-447-132.157l55.447 494 311.73 176.486v0l312.144-176.486 56.679-494-368.822-133.514v0z" opacity=".2"/>
+    <path stroke="#fff" stroke-width="2" d="M-156.822-265.671v0L-524-132.157l55.447 494 311.731 176.486v0l312.143-176.486 56.679-494-368.822-133.514v0z" opacity=".2"/>
+    <path fill="url(#paint1_linear)" fill-rule="evenodd" d="M903 189.042l120.52-75.371L1235 216.636l-121.84 75.035L903 189.042z"/>
+    <path fill="url(#paint2_linear)" fill-rule="evenodd" d="M1113.16 212.671L903 109.706l120.52-75.035L1235 137.636l-121.84 75.035z"/>
+    <path fill="url(#paint3_linear)" fill-rule="evenodd" d="M1123.53 126L864-2.175 1012.83-96 1274 32.17 1123.53 126z"/>
+  </g>
+  <defs>
+    <linearGradient id="paint0_linear" x1="7.149" x2="7.149" y1="0" y2="237.067" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFA726"/>
+      <stop offset="1" stop-color="#FB7A00"/>
+    </linearGradient>
+    <linearGradient id="paint1_linear" x1="903" x2="903" y1="113.671" y2="291.671" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EF3700" stop-opacity=".01"/>
+      <stop offset="1" stop-color="#FB7900"/>
+    </linearGradient>
+    <linearGradient id="paint2_linear" x1="903" x2="903" y1="34.671" y2="212.671" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FC8801" stop-opacity=".01"/>
+      <stop offset="1" stop-color="#FC8901"/>
+    </linearGradient>
+    <linearGradient id="paint3_linear" x1="864.974" x2="864.974" y1="-94.945" y2="126" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFA726" stop-opacity=".01"/>
+      <stop offset="1" stop-color="#FFA726"/>
+    </linearGradient>
+  </defs>
+</svg>
