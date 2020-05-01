@@ -31,9 +31,7 @@ button {
 }
 
 .container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  max-width: initial;
 }
 
 p {
@@ -46,6 +44,18 @@ iframe {
   max-width: 560px;
   max-height: 315px;
   height: 56.25vw;
+}
+
+.hero, .trainer, .learn-more-container, .agenda, .subscribe {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.learn-more, .agenda, .subscribe {
+  max-width: 1440px;
+  width: 100vw;
 }
 
 .hero {
@@ -94,8 +104,11 @@ iframe {
   }
 }
 
-.learn-more {
+.learn-more-container {
   background-color: var(--secondary-background);
+}
+
+.learn-more {
   padding: 8rem;
   flex-direction: column;
 
