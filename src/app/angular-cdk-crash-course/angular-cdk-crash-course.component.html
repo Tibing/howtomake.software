@@ -4,8 +4,8 @@
   <h1>Angular CDK Course</h1>
 
   <div class="hero-btns">
-    <button class="learn-more-btn">Learn More</button>
-    <button class="watch-video-btn">Watch Video</button>
+    <a routerLink="/course/angular-cdk-crash-course" fragment="learn-more" class="learn-more-btn">Learn More</a>
+    <a routerLink="/course/angular-cdk-crash-course" fragment="watch-video" class="watch-video-btn">Watch Video</a>
   </div>
 </div>
 
@@ -17,7 +17,7 @@
         of similarities. Angular CDK provides us the way to stop doing that. Angular CDK provides us with tons of useful
         functionalities that allows us to build more robust Angular application faster.</p>
     </div>
-    <div class="column video">
+    <div class="column video" id="watch-video">
       <iframe width="560" height="315" src="https://www.youtube.com/embed/fxYOXfHNagE" frameborder="0"
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
@@ -31,7 +31,7 @@
 </div>
 
 <div class="container agenda">
-  <div class="column content">
+  <div class="column content" id="learn-more">
 
     <ng-template #chevron let-show>
       <ng-container *ngIf="show">
@@ -112,7 +112,7 @@
 <div class="container subscribe">
   <div>
     <h2 id="subscribe">Subscribe to be notified of new videos!</h2>
-    <a href="https://share.hsforms.com/1w3q3NIDfTk2V5uhjOIO4WQ4isr6" class="contact-me-btn">Subscribe</a>
+    <a target="_blank" href="https://share.hsforms.com/1w3q3NIDfTk2V5uhjOIO4WQ4isr6" class="contact-me-btn">Subscribe</a>
   </div>
 </div>
 
