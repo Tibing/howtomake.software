@@ -7,23 +7,6 @@
   --pink: #FF5971;
   --black: #313033;
   --blue: #4620FC;
-
-  --green: #34a853;
-  --red: #ea4335;
-  --turquise: #2dc4c0;
-  --white: white;
-  --light-yellow: #feefc3;
-
-  --purple: #9c26b0;
-  --deep-purple: #673AB7;
-  --light-blue: #01A9F3;
-  --teal: #009587;
-
-  --font-color: balck;
-  --crazy-text-shadow: 6px 6px var(--blue),
-  12px 12px var(--green),
-  18px 18px var(--yellow),
-  24px 24px var(--red);
 }
 
 html, body {
@@ -32,6 +15,10 @@ html, body {
   cursor: url("/assets/cursor.png"), pointer;
 
   @extend .font-fira-mono;
+}
+
+html {
+  background-color: var(--yellow);
 }
 
 h1 {
