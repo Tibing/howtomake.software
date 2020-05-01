@@ -1,10 +1,14 @@
 .right-pattern-container {
-  background: url("/assets/home/pattern-2.svg") no-repeat;
+  background: url("/assets/home/pattern-2.svg") no-repeat center center;
+  background-size: cover;
+
   height: 600px;
+  width: 600px;
 }
 
 .right-pattern {
-  background: url("/assets/home/cloud.svg") no-repeat;
+  background: url("/assets/home/cloud.svg") no-repeat center center;
+  background-size: cover;
   width: 636px;
   height: 512px;
   display: flex;
@@ -18,4 +22,79 @@
   margin-right: -3rem;
   line-height: 60px;
   width: 400px;
+}
+
+@media (max-width: 1280px) {
+
+  .right-pattern-container {
+    height: 500px;
+    width: 500px;
+    padding-top: 4rem;
+  }
+
+  .right-pattern {
+    width: 500px;
+    height: 376px;
+    margin-left: 0;
+  }
+
+  .content {
+    margin-top: -4rem;
+    margin-right: -6rem;
+    line-height: 50px;
+  }
+}
+
+@media (max-width: 1024px) {
+
+  .right-pattern-container {
+    height: 350px;
+    width: 350px;
+    padding-top: 4rem;
+  }
+
+  .right-pattern {
+    width: 350px;
+    height: 263px;
+    margin-left: 0;
+  }
+
+  .content {
+    width: 250px;
+    line-height: 30px;
+    font-size: 32px;
+    margin-top: -3rem;
+    margin-right: -3rem;
+  }
+}
+
+@media (max-width: 768px) {
+
+  :host {
+    overflow: hidden;
+    height: 300px;
+  }
+
+  .right-pattern-container, .right-pattern {
+    width: 100vw;
+    height: 100vw;
+  }
+
+  .right-pattern-container {
+    padding-top: 1rem;
+    margin-left: -222px;
+    height: 600px;
+    width: 600px;
+  }
+
+  .right-pattern {
+    align-items: flex-start;
+    height: 460px;
+    width: 600px;
+  }
+
+  .content {
+    margin-top: 7rem;
+    margin-left: 10rem;
+  }
 }
