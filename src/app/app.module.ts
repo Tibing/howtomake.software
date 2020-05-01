@@ -13,6 +13,7 @@ import { BlogComponent } from './home/blog/blog.component';
 import { AcquaintedComponent } from './home/acquainted/acquainted.component';
 import { SocialsComponent } from './home/socials/socials.component';
 import { AngularCdkCrashCourseComponent } from './angular-cdk-crash-course/angular-cdk-crash-course.component';
+import { AboutComponent } from './about/about.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { AngularCdkCrashCourseComponent } from './angular-cdk-crash-course/angul
     AcquaintedComponent,
     SocialsComponent,
     AngularCdkCrashCourseComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,

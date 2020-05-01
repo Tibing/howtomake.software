@@ -1,9 +1,18 @@
+::ng-deep html {
+  background-color: var(--yellow);
+}
+
 :host {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 0 2rem 4rem;
+  padding: 0 1rem 4rem;
+}
+
+.container {
+  width: calc(100vw - 2rem);
+  max-width: 700px;
 }
 
 a {
@@ -20,8 +29,15 @@ img {
   border-radius: 2px;
 }
 
+iframe {
+  width: calc(100vw - 2rem);
+  max-width: calc(700px);
+  max-height: calc(393px);
+  height: calc(56.25vw - 2rem);
+}
+
 @media (max-width: 700px) {
   img {
-    width: calc(100vw - 1rem);
+    width: 100vw;
   }
 }

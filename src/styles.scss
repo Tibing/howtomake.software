@@ -30,6 +30,8 @@ html, body {
   margin: 0;
   overflow-x: hidden;
   cursor: url("/assets/cursor.png"), pointer;
+
+  @extend .font-fira-mono;
 }
 
 h1 {
