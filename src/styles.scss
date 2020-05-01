@@ -28,6 +28,7 @@
 
 html, body {
   margin: 0;
+  background-color: var(--yellow);
 }
 
 h1 {
@@ -95,4 +96,8 @@ ul {
 
 .font-fira-mono {
   font-family: 'Fira Mono', monospace;
+}
+
+div {
+  box-sizing: border-box;
 }

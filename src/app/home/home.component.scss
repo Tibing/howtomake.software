@@ -1,3 +1,6 @@
+$height: 900px;
+$min-height: 100vh;
+
 .home-container {
   display: block;
 }
@@ -5,20 +8,23 @@
 .left-pattern-container {
   background: linear-gradient(244.18deg, #FF5971 55.69%, #421FFF 100%);
   width: 45vw;
-  position: relative;
-  height: 100vh;
+  position: absolute;
+  height: $height;
+  min-height: $min-height;
 }
 
 .left-pattern {
   background: url("/assets/home/pattern-1.svg");
-  height: 100%;
+  height: $height;
+  min-height: $min-height;
 }
 
 .right-pattern-container {
   background-color: var(--yellow);
   position: absolute;
   width: 55vw;
-  height: 100vh;
+  height: $height;
+  min-height: $min-height;
   top: 0;
   right: 0;
   z-index: 1;
@@ -29,15 +35,20 @@
   left: -50vh;
   border-left: 50vh solid transparent;
   border-right: 50vh solid transparent;
-  border-bottom: 100vh solid var(--yellow);
+  border-bottom: max(#{$height}, 100vh) solid var(--yellow);
+}
+
+.pattern {
+  height: auto;
 }
 
 .about {
   z-index: 1;
-  position: absolute;
+  position: relative;
   top: 0;
-  padding-top: 64px;
   display: flex;
+  padding: 64px 0;
+  justify-content: center;
 }
 
 .column {
