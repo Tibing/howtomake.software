@@ -33,20 +33,72 @@
 <div class="container agenda">
   <div class="column content">
 
-    <ul>
+    <ng-template #chevron let-show>
+      <ng-container *ngIf="show">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <defs> <style>.cls-1 { fill: #fff; opacity: 0; } .cls-2 { fill: #231f20; }</style> </defs> <title>chevron-up</title> <g id="Layer_2" data-name="Layer 2"> <g id="chevron-up"> <g id="chevron-up-2" data-name="chevron-up"> <rect class="cls-1" width="24" height="24" transform="translate(24 24) rotate(180)"/> <path class="cls-2" d="M16,14.5a1,1,0,0,1-.71-.29L12,10.9l-3.3,3.18a1,1,0,0,1-1.41,0,1,1,0,0,1,0-1.42l4-3.86a1,1,0,0,1,1.4,0l4,4a1,1,0,0,1,0,1.42A1,1,0,0,1,16,14.5Z"/> </g> </g> </g> </svg>
+      </ng-container>
+      <ng-container *ngIf="!show">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <defs> <style>.cls-1 { fill: #fff; opacity: 0; } .cls-2 { fill: #231f20; }</style> </defs> <title>chevron-down</title> <g id="Layer_2" data-name="Layer 2"> <g id="chevron-down"> <g id="chevron-down-2" data-name="chevron-down"> <rect class="cls-1" width="24" height="24"/> <path class="cls-2" d="M12,15.5a1,1,0,0,1-.71-.29l-4-4A1,1,0,1,1,8.71,9.79L12,13.1l3.3-3.18a1,1,0,1,1,1.38,1.44l-4,3.86A1,1,0,0,1,12,15.5Z"/> </g> </g> </g> </svg>
+      </ng-container>
+    </ng-template>
+
+    <ul class="topic-list">
       <li>
-        Drag and Drop
-        <ul>
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
+        <button class="topic-header" (click)="drag = !drag">
+          <div>
+            <img src="/assets/angular-cdk-crash-course/draganddrop.png">
+            Drag and Drop
+          </div>
+          <ng-container *ngTemplateOutlet="chevron; context: {$implicit: drag}"></ng-container>
+        </button>
+        <ul class="topic" *ngIf="drag">
+          <li>
+            <a target="_blank" href="https://www.youtube.com/watch?v=DPHbjRlsp6A">1. Drag and Drop basics</a>
+          </li>
+          <li>
+            <a target="_blank" href="https://www.youtube.com/watch?v=zImMNmVYhz4">2. Rearrange the data on the list</a>
+          </li>
+          <li>
+            <a target="_blank" href="https://www.youtube.com/watch?v=f0oiM-k7nuI">3. Transfer data between lists</a>
+          </li>
+          <li>
+            <a target="_blank" href="https://www.youtube.com/watch?v=kq8ZVqBkLtg">4. Customize Preview</a>
+          </li>
+          <li>
+            <a target="_blank" href="https://www.youtube.com/watch?v=9Pz6YBuwJNE">5. Customize Placeholder</a>
+          </li>
+          <li>
+            <a routerLink="/course/angular-cdk-crash-course" fragment="subscribe">Stay tuned! More videos are coming soon...</a>
+          </li>
         </ul>
       </li>
       <li>
-        Floating Components
+        <button class="topic-header" (click)="overlays = !overlays">
+          <div>
+            <img src="/assets/angular-cdk-crash-course/overlays.png">
+            Floating Components
+          </div>
+          <ng-container *ngTemplateOutlet="chevron; context: {$implicit: overlays}"></ng-container>
+        </button>
+        <ul class="topic" *ngIf="overlays">
+          <li>
+            <a routerLink="/course/angular-cdk-crash-course" fragment="subscribe">Stay tuned! More videos are coming soon...</a>
+          </li>
+        </ul>
       </li>
       <li>
-        Tables
+        <button class="topic-header" (click)="tables = !tables">
+          <div>
+            <img src="/assets/angular-cdk-crash-course/tables.png">
+            Tables
+          </div>
+          <ng-container *ngTemplateOutlet="chevron; context: {$implicit: tables}"></ng-container>
+        </button>
+        <ul class="topic" *ngIf="tables">
+          <li>
+            <a routerLink="/course/angular-cdk-crash-course" fragment="subscribe">Stay tuned! More videos are coming soon...</a>
+          </li>
+        </ul>
       </li>
     </ul>
 
@@ -59,8 +111,8 @@
 
 <div class="container subscribe">
   <div>
-    <h2>Subscribe to be notified of new videos!</h2>
-    <a href="mailto:nik.poltoratsky@gmail.com" class="contact-me-btn">Subscribe</a>
+    <h2 id="subscribe">Subscribe to be notified of new videos!</h2>
+    <a href="https://share.hsforms.com/1w3q3NIDfTk2V5uhjOIO4WQ4isr6" class="contact-me-btn">Subscribe</a>
   </div>
 </div>
 

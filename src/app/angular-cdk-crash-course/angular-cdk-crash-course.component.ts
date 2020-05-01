@@ -7,4 +7,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AngularCdkCrashCourseComponent {
+  drag = false;
+  overlays = false;
+  tables = false;
 }

@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap');
 
 
-::ng-deep html {
-  background-color: white;
-}
-
 :host, a {
   cursor: initial;
+}
+
+a:hover {
+  cursor: pointer;
 }
 
 :host {
@@ -127,14 +127,58 @@ iframe {
 
 .agenda {
   background-color: white;
-  padding: 8rem 8rem 12rem;
+  padding: 8rem 8rem 24rem;
 
   p {
     font-size: 18px;
   }
 
   .content {
-    margin-right: 1.5rem;
+    margin-right: 5rem;
+  }
+
+  .topic-list {
+    box-shadow: 0 6px 20px rgba(14, 14, 20, 0.1);
+    border-radius: 1rem;
+    width: 600px;
+
+    a {
+      color: var(--primary);
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .topic-header {
+    padding: 1rem;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    font-weight: bold;
+
+    div {
+      display: flex;
+      align-items: center;
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    img {
+      width: 64px;
+      height: 64px;
+      margin-right: 1rem;
+    }
+  }
+
+  .topic {
+    padding: 1rem;
   }
 }
 
@@ -230,6 +274,12 @@ iframe {
   }
 }
 
+@media (max-width: 1100px) {
+  .agenda .topic-list {
+    width: 400px;
+  }
+}
+
 @media (max-width: 900px) {
   .learn-more {
     h2, p {
@@ -256,5 +306,19 @@ iframe {
 
   .agenda {
     flex-direction: column-reverse;
+    padding: 8rem 2rem 24rem;
+
+    h2, p {
+      text-align: center;
+    }
+
+    .content {
+      margin: 0;
+      width: 100%;
+    }
+
+    .topic-list {
+      width: 100%;
+    }
   }
 }
