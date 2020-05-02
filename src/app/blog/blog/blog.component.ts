@@ -1,9 +1,7 @@
-import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { ScullyRoute, ScullyRoutesService } from '@scullyio/ng-lib';
-
-import { ThemeService } from '../../theme.service';
 
 
 interface Post {
@@ -21,7 +19,7 @@ interface Post {
   templateUrl: './blog.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class BlogComponent implements OnInit, OnDestroy {
+export class BlogComponent {
 
   private posts$: Observable<Post[]> = this.scullyRoutesService.available$.pipe(
     map((routes: ScullyRoute[]) => {
@@ -39,15 +37,6 @@ export class BlogComponent implements OnInit, OnDestroy {
     map((posts: Post[]) => posts.slice(1)),
   );
 
-  constructor(private scullyRoutesService: ScullyRoutesService,
-              private themeService: ThemeService) {
-  }
-
-  ngOnInit(): void {
-    this.themeService.setTheme('gray');
-  }
-
-  ngOnDestroy(): void {
-    this.themeService.restore();
+  constructor(private scullyRoutesService: ScullyRoutesService) {
   }
 }

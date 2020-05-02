@@ -1,6 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
-
-import { ThemeService } from '../theme.service';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 
 @Component({
@@ -9,19 +7,8 @@ import { ThemeService } from '../theme.service';
   styleUrls: ['./angular-cdk-crash-course.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AngularCdkCrashCourseComponent implements OnInit, OnDestroy {
+export class AngularCdkCrashCourseComponent {
   drag = false;
   overlays = false;
   tables = false;
-
-  constructor(private themeService: ThemeService) {
-  }
-
-  ngOnInit(): void {
-    this.themeService.setTheme('white');
-  }
-
-  ngOnDestroy(): void {
-    this.themeService.restore();
-  }
 }
