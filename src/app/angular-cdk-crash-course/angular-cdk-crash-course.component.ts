@@ -1,5 +1,7 @@
-import { ChangeDetectionStrategy, Component, Inject, OnDestroy, OnInit } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
+import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
+
+import { ThemeService } from '../theme.service';
+
 
 @Component({
   selector: 'app-angular-cdk-crash-course',
@@ -12,17 +14,14 @@ export class AngularCdkCrashCourseComponent implements OnInit, OnDestroy {
   overlays = false;
   tables = false;
 
-  private prevBackground: string;
-
-  constructor(@Inject(DOCUMENT) private document) {
-  }
-
-  ngOnDestroy(): void {
-    this.document.documentElement.style.backgroundColor = this.prevBackground;
+  constructor(private themeService: ThemeService) {
   }
 
   ngOnInit(): void {
-    this.prevBackground = this.document.documentElement.style.backgroundColor;
-    this.document.documentElement.style.backgroundColor = 'white';
+    this.themeService.setTheme('white');
+  }
+
+  ngOnDestroy(): void {
+    this.themeService.restore();
   }
 }

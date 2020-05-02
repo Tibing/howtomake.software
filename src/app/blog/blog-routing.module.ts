@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { StreamComponent } from './stream/stream.component';
+import { BlogComponent } from './blog/blog.component';
 import { PostComponent } from './post/post.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: StreamComponent,
+    component: BlogComponent,
   },
   {
     path: ':slug',
@@ -15,7 +15,8 @@ const routes: Routes = [
   },
   {
     path: '**',
-    component: StreamComponent,
+    redirectTo: '',
+    pathMatch: 'full',
   },
 ];
 
@@ -23,6 +24,6 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class StreamRoutingModule {
+export class BlogRoutingModule {
 }
 

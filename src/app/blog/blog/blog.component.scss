@@ -1,0 +1,77 @@
+:host {
+  background-color: var(--gray);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 124px 1rem 4rem;
+
+  p {
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  h2 {
+    margin-top: 1rem;
+    font-weight: normal;
+  }
+}
+
+.container {
+  max-width: 1024px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.post article {
+  flex-direction: column;
+}
+
+a:hover article {
+  background-color: var(--black);
+  color: white;
+
+  .timing {
+    color: var(--yellow);
+  }
+}
+
+article {
+  display: flex;
+  background-color: var(--yellow);
+  padding: 1rem;
+
+  .timing {
+    color: var(--blue);
+  }
+}
+
+.new, .post {
+  margin: 0.5rem;
+}
+
+.new {
+  width: calc(100% - 1rem);
+
+  .post-cover {
+    width: 55%;
+    margin-right: 2rem;
+  }
+}
+
+.post article {
+  min-height: 496px;
+  background-color: white;
+}
+
+.post {
+  width: calc(50% - 1rem);
+
+  .post-cover {
+    width: 464px;
+  }
+}
+
+.about {
+  padding: 1rem;
+}
