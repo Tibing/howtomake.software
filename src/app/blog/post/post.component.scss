@@ -3,7 +3,7 @@
   background: var(--gray);
 
   .container ::ng-deep {
-    a, span, p, .token {
+    a, span, p, .token, li {
       font-size: 1rem;
     }
   }
