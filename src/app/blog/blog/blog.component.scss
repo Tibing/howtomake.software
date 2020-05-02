@@ -68,10 +68,35 @@ article {
   width: calc(50% - 1rem);
 
   .post-cover {
-    width: 464px;
+    width: 100%;
   }
 }
 
 .about {
   padding: 1rem;
+}
+
+@media (max-width: 768px) {
+
+  .new article {
+    flex-direction: column;
+
+    .post-cover {
+      width: 100%;
+    }
+
+    .timing {
+      display: none;
+    }
+  }
+
+  .post {
+    width: calc(100% - 1rem);
+  }
+}
+
+@media (max-width: 400px) {
+  :host {
+    padding-top: 164px;
+  }
 }
