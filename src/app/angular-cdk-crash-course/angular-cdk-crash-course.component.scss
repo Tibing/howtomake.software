@@ -379,6 +379,9 @@ iframe {
 
 
 @media (max-width: 768px) {
+  .learn-more {
+    padding: 0;
+  }
   .trainer .link:not(:last-of-type) {
     margin-right: 1rem;
   }
