@@ -14,23 +14,23 @@ cover: /assets/blog/cover.png
 
 In this article, I'm introducing my mental model of modern state management.
 
-More exactly I'm talking on how [ngrx](https://ngrx.io) works, why reducer is a reducer, and how it
+More exactly I'm talking on how <a href="https://ngrx.io" target="_blank">ngrk</a> works, why reducer is a reducer, and how it
 is related to the JavaScript's array reduce method. All the statements here will likely be true
 for any state management solution using redux concepts. So, if you're using Redux, you're welcome 🤓.
 
 ## At this article we'll cover:
 
-- [What is ngrx?](#what-is-ngrx)
-- [What is array reduce?](#what-is-array-reduce)
-- [Understanding reduce concept](#understanding-reduce-concept)
-- [So, why reducer is reducer?](#so-why-reducer-is-reducer)
+- [What is ngrx?](/blog/why-reducer-is-reducer#what-is-ngrx)
+- [What is array reduce?](/blog/why-reducer-is-reducer#what-is-array-reduce)
+- [Understanding reduce concept](/blog/why-reducer-is-reducer#understanding-reduce-the-concept)
+- [So, why reducer is reducer?](/blog/why-reducer-is-reducer#so-why-reducer-is-reducer)
 
 <hr>
 
 ## What is ngrx? 
 
 If you have no experience with ngrx or other redux like state management solutions, I would personally recommend you to
-learn about them first. I would suggest you start at the [ngrx getting started guide](https://ngrx.io/guide/store).
+learn about them first. I would suggest you start at the <a href="https://ngrx.io/guide/store" target="_blank">ngrx getting started guide</a>.
 
 However, I'll still cover how it works briefly. Here is a diagram from the ngrx website:
 
