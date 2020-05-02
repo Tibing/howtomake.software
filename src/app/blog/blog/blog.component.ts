@@ -1,7 +1,8 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { Observable } from 'rxjs';
+import { combineLatest, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { ScullyRoute, ScullyRoutesService } from '@scullyio/ng-lib';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 
 
 interface Post {
@@ -21,8 +22,21 @@ interface Post {
 })
 export class BlogComponent {
 
-  private posts$: Observable<Post[]> = this.scullyRoutesService.available$.pipe(
-    map((routes: ScullyRoute[]) => {
+  private showUnlisted$: Observable<boolean> = this.route.queryParamMap.pipe(
+    map((params: ParamMap) => !!params.get('unlisted')),
+  );
+
+  private posts$: Observable<Post[]> = combineLatest([
+    this.scullyRoutesService.available$,
+    this.showUnlisted$,
+  ]) .pipe(
+    map(([routes, showUnlisted]: [ScullyRoute[], boolean]) => {
+      if (showUnlisted) {
+        return routes
+          .filter((route: ScullyRoute) => route.isArticle)
+          .map((route: ScullyRoute) => ({ ...route, date: new Date(route.date) })) as Post[];
+      }
+
       return routes
         .filter((route: ScullyRoute) => !route.unlisted && route.isArticle)
         .map((route: ScullyRoute) => ({ ...route, date: new Date(route.date) })) as Post[];
@@ -37,6 +51,7 @@ export class BlogComponent {
     map((posts: Post[]) => posts.slice(1)),
   );
 
-  constructor(private scullyRoutesService: ScullyRoutesService) {
+  constructor(private scullyRoutesService: ScullyRoutesService,
+              private route: ActivatedRoute) {
   }
 }

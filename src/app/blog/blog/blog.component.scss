@@ -16,6 +16,10 @@
     margin-top: 1rem;
     font-weight: normal;
   }
+
+  h1 {
+    margin: 1rem 0;
+  }
 }
 
 .container {
@@ -58,7 +62,7 @@ article {
 
   .post-cover {
     width: 55%;
-    margin-right: 2rem;
+    margin-right: 1rem;
   }
 }
 
@@ -73,10 +77,6 @@ article {
   .post-cover {
     width: 100%;
   }
-}
-
-.about {
-  padding: 1rem;
 }
 
 @media (max-width: 768px) {

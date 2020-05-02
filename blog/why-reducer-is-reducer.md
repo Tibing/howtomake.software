@@ -1,8 +1,8 @@
 ---
 article: true
 unlisted: true
-title: 'Why reducer is reducer? Mental model of the modern state management'
-description: 'When web applications properly designed and coded users of assistive technologies can use them easily. However, we’re not always paying…'
+title: 'Why reducer is reducer? Mental model of modern state management'
+description: 'Learn why ngrx reducer is called reducer and how it is related to the JavaScript array reduce function'
 date: '2020-05-02T06:13:25Z'
 author: 'Nikita Poltoratsky'
 keyword: 'angular, rxjs, ngrx'
@@ -96,7 +96,7 @@ If you need to perform some side effect, like persisting data at the backend, yo
 With names of 4 concepts everything is clear:
 
 - **State** - application state
-- **Action** - an intent to perform an action
+- **Action** - a command to change the state or perform side effect
 - **Selector** - selects part of the state
 - **Effect** - performs side effect
 
@@ -106,7 +106,7 @@ But **reducer**'s concept always was a dark horse for me.
 - Does it have any relation to the JavaScript's arrays reduce method?
 - What was the intention to call it that way?
 
-Now, we'll tell you answers to those questions! But before we dive into those sacred secrets, we ought to learn what is array reduce method 🚀
+Now, I'll tell you answers to those questions! But before we dive into those sacred secrets, we ought to learn what is array reduce method 🚀
 
 ## What is array reduce?
 
@@ -123,9 +123,9 @@ based on the *reduce* method 🥳
 
 <hr>
 
-## Understanding reduce the concept
+## Understanding reduce concept
 
-In this section, I'm going to take an array to reduce method and build a *reducer* concept based on it.
+In this section, I'm going to take an array reduce method and build a *reducer* concept based on it.
 First of all, here we have an array and a *reduce* call:
 
 ```typescript
@@ -136,7 +136,7 @@ const result = array.reduce((acc, item) => {
 }, 0);
 ```
 
-It consumes an initial value - accumulator, that is **0** and adds an item to each at each iteration.
+It consumes an initial value - accumulator, that is **0** and adds item to the accumulator at each iteration.
 The next step is to aply an appropriate naming to it:
 
 ```typescript
