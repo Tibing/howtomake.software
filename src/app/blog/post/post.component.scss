@@ -2,6 +2,14 @@
   display: block;
   background: var(--gray);
 
+  h1 {
+    margin-bottom: 1rem;
+  }
+
+  .stats {
+    margin-bottom: 4rem;
+  }
+
   .container ::ng-deep {
     a, span, p, .token, li {
       font-size: 1rem;

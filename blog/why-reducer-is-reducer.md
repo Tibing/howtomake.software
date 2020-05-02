@@ -1,16 +1,13 @@
 ---
-title: Why reducer is reducer?
-publish: false
-description: >-
-  When web applications properly designed and coded users of assistive
-  technologies can use them easily. However, we’re not always paying…
+article: true
+unlisted: true
+title: 'Why reducer is reducer? Mental model of the modern state management'
+description: 'When web applications properly designed and coded users of assistive technologies can use them easily. However, we’re not always paying…'
 date: '2020-05-02T06:13:25Z'
-author: Nikita Poltoratsky
-keyword: angular, rxjs, ngrx
-cover: /assets/blog/cover.png
+author: 'Nikita Poltoratsky'
+keyword: 'angular, rxjs, ngrx'
+cover: /assets/blog/why-reducer-is-reducer/cover.png
 ---
-
-# Why reducer is reducer? Mental model of the modern state management
 
 In this article, I'm introducing my mental model of modern state management.
 

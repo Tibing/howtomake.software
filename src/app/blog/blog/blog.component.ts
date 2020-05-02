@@ -24,7 +24,7 @@ export class BlogComponent {
   private posts$: Observable<Post[]> = this.scullyRoutesService.available$.pipe(
     map((routes: ScullyRoute[]) => {
       return routes
-        .filter((route: ScullyRoute) => route.published)
+        .filter((route: ScullyRoute) => !route.unlisted && route.isArticle)
         .map((route: ScullyRoute) => ({ ...route, date: new Date(route.date) })) as Post[];
     }),
   );

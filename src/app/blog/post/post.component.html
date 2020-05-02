@@ -1,4 +1,10 @@
 <section class="container">
+
+  <h1>{{ title$ | async}}</h1>
+  <div class="stats">
+    {{ date$ | async | date }} - {{ readTime$ | async }}
+  </div>
+
   <scully-content></scully-content>
 
   <hr>
