@@ -14,11 +14,8 @@
 }
 
 .me {
-  // TODO remove
-  margin-right: -48px;
-  margin-bottom: -34px;
-  width: 335px;
-  height: 442px;
+  border-radius: 50%;
+  height: 479px;
 }
 
 .lightning {
@@ -50,9 +47,7 @@
   }
 
   .me {
-    width: 287px;
     height: 379px;
-    margin-right: -21px;
     margin-bottom: 0;
   }
 }
@@ -65,9 +60,7 @@
   }
 
   .me {
-    width: 225px;
     height: 300px;
-    margin-right: -21px;
     margin-bottom: 0;
   }
 }
