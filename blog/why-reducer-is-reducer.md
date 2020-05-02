@@ -10,7 +10,7 @@ keyword: angular, rxjs, ngrx
 cover: /assets/blog/cover.png
 ---
 
-# Why reducer is reducer? Model of the modern state management
+# Why reducer is reducer? Mental model of the modern state management
 
 In this article, I'm introducing my mental model of modern state management.
 
@@ -89,11 +89,12 @@ saveTasks$ = createEffect(
 );
 ```
 
-So, the main idea of the ngrx is that your application has a single source of truth - your state. It's an immutable object that can be changed only by the reducer. 
-You can use parts of the state in your components selecting them using *selectors*. If you need to change the state, you need to fire an
-action. Then, your reducer ought to intercept that action and publish a new version of the state (the state is immutable and can't be changed, that's
-why reducers don't change state, they just publish a new version of it). If you need to perform some side effect, like persisting data at the backend,
-you're using effects that intercepts an action, performs side effect and fires new action to change the state.
+So, the main idea of the ngrx is that your application has a single source of truth - your state. It's an immutable object that can be changed only by the reducer. You can use parts of the state in your components selecting them using *selectors*. 
+
+If you need to change the state, you need to fire an action. Then, your reducer ought to intercept that action and publish a new version of the state (the state is immutable and can't be changed, that's
+why reducers don't change state, they just publish a new version of it).
+
+If you need to perform some side effect, like persisting data at the backend, you're using effects that intercepts an action, performs side effect and fires new action to change the state.
 
 With names of 4 concepts everything is clear:
 
@@ -112,7 +113,7 @@ Now, we'll tell you answers to those questions! But before we dive into those sa
 
 ## What is array reduce?
 
-So, what is array reduce method? I hope, you already know what array reduce does.
+So, what is the array reduce method? I hope, you already know what array reduce does.
 
 ![how reduce works](/assets/blog/why-reducer-is-reducer/how-reduce-works.gif)
 
@@ -123,9 +124,11 @@ that will be consumed by the next iteration.
 Well, pretty easy, I'm right? I think it's a time to build a *reducer* concept
 based on the *reduce* method 🥳
 
-## Understanding reduce concept
+<hr>
 
-At this section I'm going to take an array reduce method and build a *reducer* concept based on it.
+## Understanding reduce the concept
+
+In this section, I'm going to take an array to reduce method and build a *reducer* concept based on it.
 First of all, here we have an array and a *reduce* call:
 
 ```typescript
@@ -149,7 +152,7 @@ const result = actions.reduce((state, action) => {
 ```
 
 Now it looks like a **reducer**! Am I right? We're close!
-Now, let's remember how we did state transformation at the reducer - using switch/case statement!
+Now, let's remember how we did state transformation at the reducer - using a switch/case statement!
 
 ```typescript
 const actions = [action1, action2, action3, action4, action5];
@@ -202,8 +205,131 @@ const result = actions.reduce((state, action) => {
 
 And we're done! Looks like a common **reducer** function, right? Or not? Something is still missing here...
 I mean, at the code above we're iterating over an array of items. While when we're dealing with ngrx actions, 
-it's not an array. It's a stream of events distributed over time.
+actions are not an array. It's a stream of events distributed over time.
 
-Here you ought to use your imagination.
+What concept can help us to handle a collection of events distributed over time? 
+
+Of course, it's **Observable**!
+
+Frankly speaking, **Observable** is intended to be a stream of events. But for simplicity and a better understanding of
+my concept let's refer to it as just a collection of items distributed over time. Like an array, but distributed over time 😅.
+Hopefully, you already get my point here.
+
+```typescript
+const actions = new Subject();
+
+// I can consume actions via subscribe
+actions.subscribe(action => {
+
+  // handle action somehow
+})
+
+// And can push new actions into the collection
+actions.next(someAction);
+```
+
+Here I have a plain definition of actions collection. I can push something into that collection, also, I can consume items from that collection.
+
+The next step is to create a state and to **reduce** it somehow.
+
+```typescript
+const state = new BehaviorSubject();
+
+// I can consume state via subscribe
+state.subscribe(state => {
+
+  // do something with it
+})
+
+// And can push new version of the state
+state.next(newState);
+```
+
+I've created a state stream above. I'm using **BehaviorSubject** here since it holds the last state inside and I can consume it whenever I want,
+even if subscribe on it after a new version of the state was pushed into the stream.
+
+```typescript
+const actions = new Subject();
+const state = new BehaviorSubject({count: 0});
+
+// Listen for new actions
+actions.pipe(
+
+  // Get the latest version of the state
+  withLatestFrom(state),
+
+  // Perform actual reduce - create a new state version based on the latest state and an action
+  map(([action, state]) => reducer(state, action)),
+
+  // Publish a new version of the state
+).subscribe(newState => state.next(newState));
+
+// It's an actual reducer function!
+function reducer(state, action) {
+  return { count: action.count + state.count };
+}
+
+// Fire a new action
+function onClick() {
+  actions.next({count: Math.random()});
+}
+```
+
+Above I have a very basic implementation of the ngrx store. Let's dissect it now!
+ 
+```typescript
+const actions = new Subject();
+const state = new BehaviorSubject({count: 0});
+```
+
+Here I have a stream of actions, and a stream of states.
+
+```typescript
+// Listen for new actions
+actions.pipe(
+
+  // Get the latest version of the state
+  withLatestFrom(state),
+
+  // Perform actual reduce - create a new state version based on the latest state and an action
+  map(([action, state]) => reducer(state, action)),
+
+  // Publish a new version of the state
+).subscribe(newState => state.next(newState));
+```
+
+Then, I'm listening for actions, getting the latest version of the state and applying a **reducer** function to the latest state and a new action.
+This **reducer** function returns a new version of the state (Did you notice that our **reducer** function has exactly the same signature as it has 
+in ngrx? I think we're going the right way!)
+
+After that, we're subscribing to the stream and publishing a new version of the state to the consumers.
+
+```typescript
+// It's an actual reducer function!
+function reducer(state, action) {
+  return { count: action.count + state.count };
+}
+```
+
+Here is a **reducer** function we built. It's a plain **reducer** function as it exists in the ngrx.
+
+```typescript
+// Fire a new action
+function onClick() {
+  actions.next({count: Math.random()});
+}
+```
+
+And finally, we have a click handler that fires new action.
+
+As you can see now, we went from the `array.reduce` to the ngrx store step by step. We didn't built a *real* ngrx store. We built a super simplified version
+that is intended to explain my mental model only. Hopefully, you get the idea 😅 
+
+Finally, I just want to formulate the idea.
+
+<hr>
 
 ## So, why reducer is reducer?
+
+**Reducer** is called **reducer** since it *reduces* a collection of events distributed over time and an application state. It does it the same way as **array.reduce** function with only one difference - 
+array are static, while collection of events are distributed over time.
