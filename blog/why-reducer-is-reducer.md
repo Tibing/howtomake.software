@@ -38,7 +38,7 @@ However, I'll still cover how it works briefly. Here is a diagram from the ngrx 
 
 ngrx operates with 5 major concepts:
 
-- **State** - represents the application state at the current moment.
+**State** - represents the application state at the current moment.
 
 For instance, if we're building a todo list application our state will contain the list of tasks:
 
@@ -53,7 +53,7 @@ interface Task {
 }
 ```
 
-- **Action** - describes unique events that trigger state changes or side effects.
+**Action** - describes unique events that trigger state changes or side effects.
 
 ```typescript
 const addTask = createAction('Add Task');
@@ -61,14 +61,14 @@ const removeTask = createAction('Remove Task');
 const markTaskAsDone = createAction('Mark Task As Done');
 ```
 
-- **Selector** - describes how to select slice of the state to be consumed by the component.
+**Selector** - describes how to select slice of the state to be consumed by the component.
 
 ```typescript
 const getTasks = createSelector(state => state.tasks);
 const getCompletedTasks = createSelector(state => state.tasks.filter(task => task.done));
 ```
 
-- **Reducer** - describe how your application's state will change based on actions.
+**Reducer** - describe how your application's state will change based on actions.
 
 ```typescript
 const reducer = createReducer(
@@ -78,7 +78,7 @@ const reducer = createReducer(
 )
 ```
 
-- **Effect** - performs side effects, like interaction with the backend.
+**Effect** - performs side effects, like interaction with the backend.
 
 ```typescript
 saveTasks$ = createEffect(
@@ -113,5 +113,97 @@ Now, we'll tell you answers to those questions! But before we dive into those sa
 ## What is array reduce?
 
 So, what is array reduce method? I hope, you already know what array reduce does.
+
+![how reduce works](/assets/blog/why-reducer-is-reducer/how-reduce-works.gif)
+
+In fact, the reduce method accepts an initial state, then iterates over the array items and applies some transformations
+to the accumulator based on each item. It handles items one by one. Each iteration returns a new version of the accumulator
+that will be consumed by the next iteration.
+
+Well, pretty easy, I'm right? I think it's a time to build a *reducer* concept
+based on the *reduce* method 🥳
+
 ## Understanding reduce concept
+
+At this section I'm going to take an array reduce method and build a *reducer* concept based on it.
+First of all, here we have an array and a *reduce* call:
+
+```typescript
+const array = [1, 2, 3, 4, 5];
+
+const result = array.reduce((acc, item) => {
+  return acc + item;
+}, 0);
+```
+
+It consumes an initial value - accumulator, that is **0** and adds an item to each at each iteration.
+The next step is to aply an appropriate naming to it:
+
+```typescript
+const actions = [action1, action2, action3, action4, action5];
+const initialStoreState = {};
+
+const result = actions.reduce((state, action) => {
+  // perform some transformation
+}, initialStoreState);
+```
+
+Now it looks like a **reducer**! Am I right? We're close!
+Now, let's remember how we did state transformation at the reducer - using switch/case statement!
+
+```typescript
+const actions = [action1, action2, action3, action4, action5];
+const initialStoreState = {};
+
+const result = actions.reduce((state, action) => {
+  switch (action.type) {
+    case Action1:
+      // apply some transformations
+    case Action2:
+      // apply some transformations
+    case Action3:
+      // apply some transformations
+    case Action4:
+      // apply some transformations
+    case Action5:
+      // apply some transformations
+  }
+}, initialStoreState);
+```
+
+Much better now, huh? Now, do you remember that ngrx operates with the immutable state objects? That
+mean we can't just apply some transformations to the state, we also need to create a new state object each
+time we do something at the reduce method:
+
+```typescript
+const actions = [action1, action2, action3, action4, action5];
+const initialStoreState = {};
+
+const result = actions.reduce((state, action) => {
+  switch (action.type) {
+    case Action1:
+      // apply some transformations
+      return newVersionOfTheState;
+    case Action2:
+      // apply some transformations
+      return newVersionOfTheState;
+    case Action3:
+      // apply some transformations
+      return newVersionOfTheState;
+    case Action4:
+      // apply some transformations
+      return newVersionOfTheState;
+    case Action5:
+      // apply some transformations
+      return newVersionOfTheState;
+  }
+}, initialStoreState);
+```
+
+And we're done! Looks like a common **reducer** function, right? Or not? Something is still missing here...
+I mean, at the code above we're iterating over an array of items. While when we're dealing with ngrx actions, 
+it's not an array. It's a stream of events distributed over time.
+
+Here you ought to use your imagination.
+
 ## So, why reducer is reducer?
