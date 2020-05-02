@@ -1,0 +1,34 @@
+:host {
+  display: block;
+  padding-top: 4rem;
+}
+
+a {
+  color: var(--blue);
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+img {
+  width: 64px;
+  height: 64px;
+  border-radius: 500px;
+  margin-right: 1rem;
+}
+
+.me {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+
+  p {
+    margin: 0.5rem 0;
+  }
+}
