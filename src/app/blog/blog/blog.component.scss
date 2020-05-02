@@ -38,6 +38,7 @@ a:hover article {
 
 article {
   display: flex;
+  align-items: flex-start;
   background-color: var(--yellow);
   padding: 1rem;
 
