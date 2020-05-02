@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-blog',
+  selector: 'np-blog',
   templateUrl: './blog.component.html',
   styleUrls: ['./blog.component.scss'],
 })
