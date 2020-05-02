@@ -7,6 +7,7 @@
   background: url("/assets/home/pattern-2.svg") no-repeat center center;
   background-size: cover;
 
+  box-sizing: border-box;
   height: 600px;
   width: 600px;
   display: block;
@@ -36,7 +37,7 @@
   top: 8rem;
   left: 14rem;
   line-height: 60px;
-  width: 400px;
+  width: 350px;
   position: absolute;
 }
 
@@ -70,7 +71,7 @@
   }
 
   .right-pattern {
-    width: 400px;
+    width: 350px;
     height: 313px;
     margin-left: 0;
   }
@@ -112,7 +113,7 @@
   .content {
     left: 30vw;
     font-size: 40px;
-    width: 330px;
+    width: 300px;
   }
 }
 
