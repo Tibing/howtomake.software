@@ -1,3 +1,5 @@
+@import 'code-highlight';
+
 :host {
   display: block;
   background: var(--gray);
@@ -18,6 +20,8 @@
     p {
       margin: 2rem 0;
     }
+
+    @include code-highlight;
   }
 }
 
