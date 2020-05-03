@@ -3,6 +3,16 @@ const { contentFolderPlugin } = require('@scullyio/scully/routerPlugins/contentF
 const { registerPlugin } = require('@scullyio/scully');
 const { readFileSync } = require('fs');
 const readingTime = require('reading-time');
+const marked = require('marked');
+require('prismjs/prism');
+require('prismjs/plugins/toolbar/prism-toolbar.js');
+require('prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard.js');
+require('prismjs/components/prism-bash.js');
+require('prismjs/components/prism-css.js');
+require('prismjs/components/prism-javascript.js');
+require('prismjs/components/prism-json.js');
+require('prismjs/components/prism-markup.js');
+require('prismjs/components/prism-typescript.js');
 
 const ARTICLE_PLUGIN_NAME = 'articlePlugin';
 
@@ -18,6 +28,15 @@ function isArticlePlugin(routes) {
     route.data.isArticle = true;
   })
 }
+
+const markdownPlugin = async (raw) => {
+  marked.setOptions({
+    highlight(code, lang) {
+      return Prism.highlight(code, Prism.languages[lang], lang);
+    }
+  });
+  return marked(raw)
+};
 
 const plugins = [
   readingTimePlugin,
@@ -35,5 +54,6 @@ async function articlePlugin(route, config = {}) {
 const validator = async conf => [];
 registerPlugin('router', ARTICLE_PLUGIN_NAME, articlePlugin, validator);
 registerPlugin('render', ARTICLE_PLUGIN_NAME, contentRenderPlugin);
+registerPlugin('fileHandler', 'md', markdownPlugin, [ 'markdown' ], { replaceExistingPlugin: true });
 
 module.exports.articlePlugin = ARTICLE_PLUGIN_NAME;

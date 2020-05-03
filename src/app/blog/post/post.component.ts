@@ -1,10 +1,9 @@
 import { AfterViewChecked, ChangeDetectionStrategy, Component } from '@angular/core';
 import { ScullyRoute, ScullyRoutesService } from '@scullyio/ng-lib';
-
-import { HighlightService } from '../highlight.service';
-import { MetadataService } from '../metadata.service';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+
+import { MetadataService } from '../metadata.service';
 
 
 @Component({
@@ -27,13 +26,11 @@ export class PostComponent implements AfterViewChecked {
     map((route: ScullyRoute) => route.date),
   );
 
-  constructor(private highlightService: HighlightService,
-              private metadataService: MetadataService,
+  constructor(private metadataService: MetadataService,
               private scullyRoutesService: ScullyRoutesService) {
   }
 
   ngAfterViewChecked(): void {
-    this.highlightService.highlightAll();
     this.metadataService.trackMetadataChanges();
   }
 }
