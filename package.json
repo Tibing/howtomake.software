@@ -11,7 +11,9 @@
     "scully": "scully",
     "scully:serve": "scully serve",
     "analyze": "npm run build:stats && webpack-bundle-analyzer dist/poltoratsky/stats-es2015.json",
-    "build:stats": "ng build --stats-json"
+    "build:stats": "ng build --stats-json",
+    "publish": "npm run build && npm run deploy",
+    "deploy": "scp -r dist/static/* root@159.65.40.154:/var/www/html/"
   },
   "private": true,
   "dependencies": {
