@@ -112,7 +112,10 @@ Now, I'll tell you answers to those questions! But before we dive into those sac
 
 So, what is the array reduce method? I hope, you already know what array reduce does.
 
-<img src="/assets/blog/why-reducer-is-reducer/how-reduce-works.gif" loading="lazy">
+<video controls autoplay>
+  <source src="/assets/blog/why-reducer-is-reducer/how-reduce-works.m4v" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 In fact, the reduce method accepts an initial state, then iterates over the array items and applies some transformations
 to the accumulator based on each item. It handles items one by one. Each iteration returns a new version of the accumulator
