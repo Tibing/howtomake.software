@@ -1,5 +1,4 @@
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
 
 import 'clipboard/dist/clipboard.js';
 import 'prismjs/prism.js';
@@ -23,8 +22,6 @@ export class HighlightService {
   }
 
   highlightAll() {
-    if (isPlatformBrowser(this.platformId)) {
-      Prism.highlightAll();
-    }
+    Prism.highlightAll();
   }
 }
