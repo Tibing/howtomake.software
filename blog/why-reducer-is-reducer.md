@@ -31,7 +31,7 @@ learn about them first. I would suggest you start at the <a href="https://ngrx.i
 
 However, I'll still cover how it works briefly. Here is a diagram from the ngrx website:
 
-![how ngrx works](/assets/blog/why-reducer-is-reducer/how-ngrx-works.png)
+<img src="/assets/blog/why-reducer-is-reducer/how-ngrx-works.png" loading="lazy">
 
 ngrx operates with 5 major concepts:
 
@@ -112,7 +112,7 @@ Now, I'll tell you answers to those questions! But before we dive into those sac
 
 So, what is the array reduce method? I hope, you already know what array reduce does.
 
-![how reduce works](/assets/blog/why-reducer-is-reducer/how-reduce-works.gif)
+<img src="/assets/blog/why-reducer-is-reducer/how-reduce-works.gif" loading="lazy">
 
 In fact, the reduce method accepts an initial state, then iterates over the array items and applies some transformations
 to the accumulator based on each item. It handles items one by one. Each iteration returns a new version of the accumulator
