@@ -7,6 +7,7 @@
 
   h1 {
     margin-bottom: 1rem;
+    font-size: 40px;
   }
 
   .stats {
@@ -17,7 +18,7 @@
 
   .container ::ng-deep {
     a, p, li {
-      font-size: 1.25rem;
+      font-size: 19px;
       font-family: 'Rubik', sans-serif;
       font-weight: 300;
       line-height: 30px;
@@ -44,6 +45,10 @@
     h2, h3, h4, h5, h6 {
       font-weight: normal;
     }
+
+    h2 {
+      font-size: 28px;
+    }
   }
 }
 
@@ -53,9 +58,10 @@ header {
 }
 
 .header-container {
-  max-width: calc(960px + 2rem);
+  max-width: 720px;
   margin: auto;
   padding: 40px 1rem;
+  box-sizing: initial;
 
   h1 {
     margin: 0;
@@ -113,32 +119,32 @@ header {
 }
 
 @media (max-width: 768px) {
+  :host h1 {
+    font-size: 32px;
+  }
+
   .container {
     padding-top: 0.1px;
+
+    hr {
+      width: calc(100vw + 2rem);
+      margin-left: -1rem;
+    }
   }
 
-  h1 {
-    font-size: 2rem;
-    line-height: 1.25;
-  }
+  :host .container ::ng-deep {
+     video {
+       border-radius: 0;
+     }
 
-  h2 {
-    font-size: 1.5rem;
-  }
+    a, p, li {
+      font-size: 1rem;
+      line-height: 26px;
+    }
 
-  :host .container ::ng-deep video {
-    border-radius: 0;
-  }
-}
-
-
-@media (max-width: 500px) {
-  h1 {
-    font-size: 1.5rem;
-  }
-
-  h2 {
-    font-size: 1.15rem;
+    h2 {
+      font-size: 23px;
+    }
   }
 }
 
