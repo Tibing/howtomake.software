@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'np-about',
@@ -7,4 +8,9 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AboutComponent {
+
+  constructor(title: Title, meta: Meta) {
+    title.setTitle('About Nikita Poltoratsky');
+    meta.updateTag({ name: 'description', content: 'Learn who is Nikita Poltoratsky' });
+  }
 }

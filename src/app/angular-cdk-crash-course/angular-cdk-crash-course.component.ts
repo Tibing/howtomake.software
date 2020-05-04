@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 
 
 @Component({
@@ -11,4 +12,9 @@ export class AngularCdkCrashCourseComponent {
   drag = false;
   overlays = false;
   tables = false;
+
+  constructor(title: Title, meta: Meta) {
+    title.setTitle('Angular CDK Crash Course');
+    meta.updateTag({ name: 'description', content: 'Learn how to build more robust Angular applications faster' });
+  }
 }

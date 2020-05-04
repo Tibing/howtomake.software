@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'np-home',
@@ -7,4 +8,9 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeComponent {
+
+  constructor(title: Title, meta: Meta) {
+    title.setTitle('howtomake.software');
+    meta.updateTag({ name: 'description', content: 'Personal blog by Nikita Poltoratsy' });
+  }
 }

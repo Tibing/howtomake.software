@@ -3,6 +3,7 @@ import { combineLatest, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { ScullyRoute, ScullyRoutesService } from '@scullyio/ng-lib';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+import { Meta, Title } from '@angular/platform-browser';
 
 
 interface Post {
@@ -52,6 +53,10 @@ export class BlogComponent {
   );
 
   constructor(private scullyRoutesService: ScullyRoutesService,
-              private route: ActivatedRoute) {
+              private route: ActivatedRoute,
+              title: Title,
+              meta: Meta) {
+    title.setTitle('Blog by Nikita Poltoratsky');
+    meta.updateTag({ name: 'description', content: 'Personal blog by Nikita Poltoratsky' });
   }
 }

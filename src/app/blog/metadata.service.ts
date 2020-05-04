@@ -1,14 +1,21 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 import { ScullyRoute, ScullyRoutesService } from '@scullyio/ng-lib';
 import { Meta, Title } from '@angular/platform-browser';
+import { Subject } from 'rxjs';
 
 
 @Injectable({ providedIn: 'any' })
-export class MetadataService {
+export class MetadataService implements OnDestroy {
+
+  private destroy$ = new Subject();
 
   constructor(private routes: ScullyRoutesService,
               private title: Title,
               private meta: Meta) {
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next();
   }
 
   trackMetadataChanges(): void {
