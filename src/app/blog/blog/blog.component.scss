@@ -80,6 +80,14 @@ article {
 }
 
 @media (max-width: 768px) {
+  :host {
+    padding: 124px 0 4rem;
+  }
+
+  .new, .post {
+    margin: 0.5rem 0;
+    width: 100%;
+  }
 
   .new article {
     flex-direction: column;
@@ -91,10 +99,6 @@ article {
     .timing {
       display: none;
     }
-  }
-
-  .post {
-    width: calc(100% - 1rem);
   }
 }
 
