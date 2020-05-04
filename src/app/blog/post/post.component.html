@@ -1,14 +1,21 @@
-<section class="container line-numbers">
+<header>
+  <div class="header-container">
+    <div class="stats">
+      {{ date$ | async | date }} - {{ readTime$ | async }}
+    </div>
 
-  <h1>{{ title$ | async}}</h1>
-  <div class="stats">
-    {{ date$ | async | date }} - {{ readTime$ | async }}
+    <h1>{{ title$ | async}}</h1>
   </div>
+</header>
 
-  <scully-content></scully-content>
+<div class="master-container">
+  <article class="container line-numbers">
 
-  <hr>
-  <np-me-footer></np-me-footer>
-  <a routerLink="blog" class="check-other-posts"><== Check Other Posts</a>
+    <scully-content></scully-content>
 
-</section>
+    <hr>
+    <np-me-footer></np-me-footer>
+    <a routerLink="blog" class="check-other-posts"><== Check Other Posts</a>
+
+  </article>
+</div>

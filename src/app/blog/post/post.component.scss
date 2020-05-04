@@ -3,17 +3,28 @@
 :host {
   display: block;
   background: var(--gray);
+  padding-top: 114px;
 
   h1 {
     margin-bottom: 1rem;
   }
 
   .stats {
-    margin-bottom: 4rem;
+    margin-bottom: 29px;
+    font-weight: bold;
+    color: var(--blue);
   }
 
   .container ::ng-deep {
-    a, span, p, .token, li {
+    a, p, li {
+      font-size: 1.25rem;
+      font-family: 'Rubik', sans-serif;
+      font-weight: 300;
+      line-height: 30px;
+    }
+
+    span.token {
+      font-family: 'Fira Mono', monospace;
       font-size: 1rem;
     }
 
@@ -29,13 +40,37 @@
       margin-right: -1rem;
       border-radius: 0.5rem;
     }
+
+    h2, h3, h4, h5, h6 {
+      font-weight: normal;
+    }
   }
 }
 
-.container {
-  max-width: 700px;
+header {
+  width: 100vw;
+  background-color: var(--yellow);
+}
+
+.header-container {
+  max-width: calc(960px + 2rem);
   margin: auto;
-  padding: 164px 1rem 4rem;
+  padding: 40px 1rem;
+
+  h1 {
+    margin: 0;
+  }
+}
+
+.master-container {
+  max-width: 960px;
+  margin: auto;
+  background-color: white;
+}
+
+.container {
+  max-width: 720px;
+  padding: 2rem 1rem 4rem;
 
   img {
     max-width: 700px;
@@ -51,13 +86,24 @@
   }
 
   ul {
-    padding-left: 2rem;
+    padding-left: 1rem;
     list-style: initial;
+  }
+
+  ul li::before {
+    content: "\2022";
+    color: var(--blue);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
   }
 
   hr {
     margin: 2rem auto;
-    max-width: 30vw;
+    width: 100%;
+    opacity: 0.16;
+    border: 1px solid #000000;
   }
 }
 
@@ -67,6 +113,10 @@
 }
 
 @media (max-width: 768px) {
+  .container {
+    padding-top: 0.1px;
+  }
+
   h1 {
     font-size: 2rem;
     line-height: 1.25;
@@ -89,5 +139,11 @@
 
   h2 {
     font-size: 1.15rem;
+  }
+}
+
+@media (max-width: 400px) {
+  :host {
+    padding-top: 147px;
   }
 }
