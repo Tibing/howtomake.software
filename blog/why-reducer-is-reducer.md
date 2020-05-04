@@ -1,7 +1,7 @@
 ---
 article: true
 unlisted: true
-title: 'Why reducer is reducer? Mental model of modern state management'
+title: 'Why reducer is reducer?'
 description: 'Learn why ngrx reducer is called reducer and how it is related to the JavaScript array reduce function'
 date: '2020-05-02T06:13:25Z'
 author: 'Nikita Poltoratsky'
@@ -332,4 +332,4 @@ Finally, I just want to formulate the idea.
 ## So, why reducer is reducer?
 
 **Reducer** is called **reducer** since it *reduces* a collection of events distributed over time and an application state. It does it the same way as **array.reduce** function with only one difference - 
-array are static, while collection of events are distributed over time.
+arrays are static, while collection of events are distributed over time.
