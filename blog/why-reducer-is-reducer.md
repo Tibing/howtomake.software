@@ -11,7 +11,7 @@ cover: /assets/blog/why-reducer-is-reducer/cover.png
 
 In this article, I'm introducing my mental model of modern state management.
 
-More exactly I'm talking on how <a href="https://ngrx.io" target="_blank">ngrk</a> works, why reducer is a reducer, and how it
+More exactly I'm talking on how <a href="https://ngrx.io" target="_blank">ngrx</a> works, why reducer is a reducer, and how it
 is related to the JavaScript's array reduce method. All the statements here will likely be true
 for any state management solution using redux concepts. So, if you're using Redux, you're welcome 🤓.
 
