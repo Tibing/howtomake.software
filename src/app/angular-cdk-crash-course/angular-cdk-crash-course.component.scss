@@ -92,6 +92,11 @@ iframe {
       border: none;
       border-radius: 50px;
       margin-right: 1rem;
+
+      &:hover {
+        background-color: white;
+        color: var(--primary);
+      }
     }
 
     .watch-video-btn {
@@ -100,6 +105,11 @@ iframe {
       padding: 1rem 2rem;
       border: none;
       border-radius: 50px;
+
+      &:hover {
+        background-color: black;
+        color: var(--secondary);
+      }
     }
   }
 }
@@ -234,6 +244,11 @@ iframe {
     border: none;
     border-radius: 50px;
     margin-right: 1rem;
+
+    &:hover {
+      color: white;
+      background-color: #FB7902;
+    }
   }
 }
 
@@ -276,6 +291,11 @@ iframe {
     border: none;
     border-radius: 50px;
     margin-right: 1rem;
+
+    &:hover {
+      background-color: var(--primary);
+      color: white;
+    }
   }
 
   .social-links {
