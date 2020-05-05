@@ -153,3 +153,9 @@ header {
     padding-top: 147px;
   }
 }
+
+@media (max-width: 380px) {
+  .check-other-posts {
+    text-align: center;
+  }
+}
