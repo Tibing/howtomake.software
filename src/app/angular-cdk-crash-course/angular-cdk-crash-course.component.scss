@@ -88,10 +88,11 @@ iframe {
     .learn-more-btn {
       background-color: var(--primary);
       color: white;
-      padding: 1rem 2rem;
       border: none;
       border-radius: 50px;
       margin-right: 1rem;
+      font-size: 18px;
+      padding: 18px 40px;
 
       &:hover {
         background-color: white;
@@ -105,6 +106,8 @@ iframe {
       padding: 1rem 2rem;
       border: none;
       border-radius: 50px;
+      font-size: 18px;
+      padding: 18px 40px;
 
       &:hover {
         background-color: black;
@@ -191,6 +194,7 @@ iframe {
     width: 100%;
     font-weight: bold;
     background-color: white;
+    box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.04);
 
     div {
       display: flex;
@@ -210,7 +214,41 @@ iframe {
   }
 
   .topic {
-    padding: 1rem;
+    background-color: #F8F8FB;
+
+    a {
+      font-weight: 300;
+      font-size: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .left {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    li {
+      padding: 1rem;
+      border-bottom: 1px solid #EDF1F8;
+
+      img {
+        margin-right: 1rem;
+      }
+
+      &.stay-tuned {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        & > a {
+          color: #FB7902;
+          font-weight: bold;
+        }
+      }
+    }
   }
 }
 
@@ -240,10 +278,11 @@ iframe {
   a {
     color: #FB7902;
     background-color: white;
-    padding: 1rem 2rem;
     border: none;
     border-radius: 50px;
     margin-right: 1rem;
+    font-size: 18px;
+    padding: 18px 40px;
 
     &:hover {
       color: white;
@@ -252,8 +291,15 @@ iframe {
   }
 }
 
-.trainer {
+.trainer-container {
   background: linear-gradient(180deg, #3466FF 0%, #0F45EC 100%);
+}
+
+.trainer {
+  background-image: url('/assets/angular-cdk-crash-course/shield.svg');
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: contain;
   color: white;
   display: flex;
   align-items: center;
@@ -287,10 +333,11 @@ iframe {
   .contact-me-btn {
     background-color: white;
     color: var(--primary);
-    padding: 1rem 2rem;
     border: none;
     border-radius: 50px;
     margin-right: 1rem;
+    font-size: 18px;
+    padding: 18px 40px;
 
     &:hover {
       background-color: var(--primary);
@@ -329,6 +376,16 @@ iframe {
       fill: white;
     }
   }
+
+  .course-trainer {
+    margin-bottom: 46px;
+    font-size: 40px;
+  }
+
+  .nikita {
+    margin-top: 36px;
+    margin-bottom: 1rem;
+  }
 }
 
 @media (max-width: 1280px) {
@@ -345,6 +402,12 @@ iframe {
 
   .learn-more .free-course {
     margin-top: 2rem;
+  }
+}
+
+@media (min-width: 1050px) {
+  .trainer {
+    background-position: center;
   }
 }
 

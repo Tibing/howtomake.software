@@ -9,9 +9,9 @@ import { Meta, Title } from '@angular/platform-browser';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AngularCdkCrashCourseComponent {
-  drag = false;
-  overlays = false;
-  tables = false;
+  drag = true;
+  overlays = true;
+  tables = true;
 
   constructor(title: Title, meta: Meta) {
     title.setTitle('Angular CDK Crash Course');
