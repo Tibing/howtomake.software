@@ -104,7 +104,7 @@
             </div>
             <ng-container *ngTemplateOutlet="chevron; context: {$implicit: drag}"></ng-container>
           </button>
-          <ul class="topic" *ngIf="drag">
+          <ul class="topic drag" [class.visible]="drag">
             <li>
               <a target="_blank" href="https://www.youtube.com/watch?v=DPHbjRlsp6A">
                 <div class="left">
@@ -147,7 +147,7 @@
             </div>
             <ng-container *ngTemplateOutlet="chevron; context: {$implicit: overlays}"></ng-container>
           </button>
-          <ul class="topic" *ngIf="overlays">
+          <ul class="topic overlays" [class.visible]="overlays">
             <li class="stay-tuned">
               <img src="/assets/angular-cdk-crash-course/stay-tuned.svg">
               <a routerLink="/course/angular-cdk-crash-course" fragment="subscribe">Stay tuned! More videos are coming
@@ -163,7 +163,7 @@
             </div>
             <ng-container *ngTemplateOutlet="chevron; context: {$implicit: tables}"></ng-container>
           </button>
-          <ul class="topic" *ngIf="tables">
+          <ul class="topic tables" [class.visible]="tables">
             <li class="stay-tuned">
               <img src="/assets/angular-cdk-crash-course/stay-tuned.svg">
               <a routerLink="/course/angular-cdk-crash-course" fragment="subscribe">Stay tuned! More videos are coming

@@ -103,7 +103,6 @@ iframe {
     .watch-video-btn {
       background-color: var(--secondary);
       color: black;
-      padding: 1rem 2rem;
       border: none;
       border-radius: 50px;
       font-size: 18px;
@@ -215,6 +214,17 @@ iframe {
 
   .topic {
     background-color: #F8F8FB;
+    transition: height 0.3s;
+    height: 0;
+    overflow: hidden;
+
+    &.drag.visible {
+      height: calc(67px * 3);
+    }
+
+    &.overlays.visible, &.tables.visible {
+      height: 67px;
+    }
 
     a {
       font-weight: 300;
