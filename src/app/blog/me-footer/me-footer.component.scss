@@ -25,7 +25,6 @@ img {
 .me {
   display: flex;
   align-items: center;
-  margin-top: 2rem;
 }
 
 .about {
@@ -34,6 +33,19 @@ img {
 
   p {
     margin: 0;
+  }
+}
+
+::ng-deep form {
+  margin: 4rem auto;
+
+  p, input, span {
+    font-weight: 300 !important;
+    font-size: 1rem !important;
+  }
+
+  p {
+    color: var(--black) !important;
   }
 }
 
