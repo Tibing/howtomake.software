@@ -1,6 +1,6 @@
 ---
 article: true
-unlisted: true
+unlisted: false
 title: 'Why reducer is reducer?'
 description: 'Learn why ngrx reducer is called reducer and how it is related to the JavaScript array reduce function'
 date: '2020-05-02T06:13:25Z'
