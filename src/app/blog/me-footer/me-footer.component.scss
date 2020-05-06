@@ -1,6 +1,5 @@
 :host {
   display: block;
-  padding-top: 4rem;
 }
 
 a {
@@ -8,10 +7,6 @@ a {
 
   &:hover {
     text-decoration: underline;
-  }
-
-  &.home {
-    margin-right: 1rem;
   }
 }
 
@@ -42,6 +37,10 @@ img {
   p, input, span {
     font-weight: 300 !important;
     font-size: 1rem !important;
+  }
+
+  p, input, span, h1 {
+    line-height: 1.5 !important;
   }
 
   p {
