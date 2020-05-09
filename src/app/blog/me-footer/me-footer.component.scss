@@ -46,6 +46,10 @@ img {
   p {
     color: var(--black) !important;
   }
+
+  .formkit-header, .formkit-subheader {
+    z-index: auto !important;
+  }
 }
 
 @media (max-width: 768px) {
