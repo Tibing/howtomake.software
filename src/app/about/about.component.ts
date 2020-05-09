@@ -12,5 +12,6 @@ export class AboutComponent {
   constructor(title: Title, meta: Meta) {
     title.setTitle('About Nikita Poltoratsky');
     meta.updateTag({ name: 'description', content: 'Learn who is Nikita Poltoratsky' });
+    meta.updateTag({ name: 'og:image', content: '/assets/home/cover.png' });
   }
 }

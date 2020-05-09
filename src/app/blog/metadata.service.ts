@@ -26,6 +26,8 @@ export class MetadataService implements OnDestroy {
       for (const tag of meta) {
         this.meta.updateTag({ name: tag, content: route[tag] });
       }
+
+      this.meta.updateTag({ name: 'og:image', content: route.cover });
     });
   }
 }

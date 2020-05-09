@@ -72,5 +72,6 @@ export class BlogComponent {
               meta: Meta) {
     title.setTitle('Blog by Nikita Poltoratsky');
     meta.updateTag({ name: 'description', content: 'Personal blog by Nikita Poltoratsky' });
+    meta.updateTag({ name: 'og:image', content: '/assets/home/cover.png' });
   }
 }
