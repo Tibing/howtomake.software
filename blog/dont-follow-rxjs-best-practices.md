@@ -1,12 +1,12 @@
 ---
 article: true
 unlisted: false
-title: Don't follow RxJS best practices!
-description: 'No description yet'
-date: '2020-05-02T06:13:25Z'
+title: "Don't follow RxJS best practices!"
+description: "Nowadays more and more developers learn RxJS and use it properly with best practices in mind. But we shouldn't. All those so-called best practices require to learn something new and to add additional code in your projects. Moreover, using the best practices we're risking to create a good code base and make your teammates happy! 🌈 Stop being a gray mass! Break the rules! Stop using best practices!"
+date: '2019-07-15T06:13:25Z'
 author: 'Nikita Poltoratsky'
 keyword: 'angular, rxjs, ngrx'
-cover: /assets/blog/why-reducer-is-reducer/cover.png
+cover: 'https://res.cloudinary.com/practicaldev/image/fetch/s--D4B0yZDu--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://res.cloudinary.com/practicaldev/image/fetch/s--6LIrSr00--/c_imagga_scale%2Cf_auto%2Cfl_progressive%2Ch_420%2Cq_auto%2Cw_1000/https://thepracticaldev.s3.amazonaws.com/i/fw7q9ekc48zx2ctbw0la.png'
 ---
 
 <link rel="canonical" href="https://dev.to/nikpoltoratsky/don-t-follow-rxjs-best-practices-4893">
@@ -44,7 +44,7 @@ export class MyComponent implements OnInit, OnDestroy {
   ngOnInit() {
     myInfiniteStream$
       .pipe(takeUntil(this.destroyed$))
-      .subscribe(() => ...);
+      .subscribe(() => ...)
   }
 
   ngOnDestroy() {
@@ -63,7 +63,7 @@ export class MyComponent implements OnInit, OnDestroy {
   ngOnInit() {
     myInfiniteStream$
       .pipe(takeWhile(() => this.alive))
-      .subscribe(() => ...);
+      .subscribe(() => ...)
   }
   ngOnDestroy() {
     this.alive = false;
@@ -81,7 +81,7 @@ export class MyComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.subscription = myInfiniteStream$
-      .subscribe(() => ...);
+      .subscribe(() => ...)
   }
 
   ngOnDestroy() {
@@ -104,15 +104,15 @@ export class MyComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.subscription1 = myInfiniteStream1$
-      .subscribe(() => ...);
+      .subscribe(() => ...)
         this.subscription2 = myInfiniteStream2$
-      .subscribe(() => ...);
+      .subscribe(() => ...)
         this.subscription3 = myInfiniteStream3$
-      .subscribe(() => ...);
+      .subscribe(() => ...)
         this.subscription4 = myInfiniteStream4$
-      .subscribe(() => ...);
+      .subscribe(() => ...)
         this.subscription5 = myInfiniteStream5$
-      .subscribe(() => ...);
+      .subscribe(() => ...)
   }
 
   ngOnDestroy() {
@@ -134,7 +134,7 @@ export class MyComponent implements OnInit {
 
   ngOnInit() {
     myInfiniteStream$
-      .subscribe(() => ...);
+      .subscribe(() => ...)
   }
 }
 ```

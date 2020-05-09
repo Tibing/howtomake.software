@@ -30,7 +30,7 @@ export class BlogComponent {
   private posts$: Observable<Post[]> = combineLatest([
     this.scullyRoutesService.available$,
     this.showUnlisted$,
-  ]) .pipe(
+  ]).pipe(
     map(([routes, showUnlisted]: [ScullyRoute[], boolean]) => {
       if (showUnlisted) {
         return routes
@@ -41,6 +41,20 @@ export class BlogComponent {
       return routes
         .filter((route: ScullyRoute) => !route.unlisted && route.isArticle)
         .map((route: ScullyRoute) => ({ ...route, date: new Date(route.date) })) as Post[];
+    }),
+    map((posts: Post[]) => {
+      return posts.sort((post: Post, post1: Post) => {
+        return (post1.date as any) - (post.date as any);
+      })
+        .map((post: Post) => {
+          const MAX_DESCRIPTION_LEN = 110;
+
+          if (post.description.length > MAX_DESCRIPTION_LEN) {
+            post.description = post.description.slice(0, MAX_DESCRIPTION_LEN) + '...';
+          }
+
+          return post;
+        });
     }),
   );
 
