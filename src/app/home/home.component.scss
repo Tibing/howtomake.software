@@ -1,5 +1,5 @@
 :host {
-  --home-height: 1000px;
+  --home-height: 895px;
   --home-min-height: 100vh;
 
   user-select: none;
@@ -51,7 +51,7 @@
   position: relative;
   top: 0;
   padding-top: 164px;
-  padding-bottom: 64px;
+  padding-bottom: 32px;
 }
 
 .container {
@@ -96,6 +96,11 @@ np-blog {
 }
 
 @media (max-width: 1280px) {
+
+  :host {
+    --home-height: 800px;
+  }
+
   np-blog {
     margin-left: 0;
   }
@@ -103,7 +108,7 @@ np-blog {
 
 @media (max-width: 1024px) {
   :host {
-    --home-height: 868px;
+    --home-height: 668px;
   }
 
   np-blog {
