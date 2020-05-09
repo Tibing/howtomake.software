@@ -1,34 +1,29 @@
 <ul class="container">
 
   <li class="new" *ngIf="new$ | async as post">
-    <a [routerLink]="post.route">
-      <article>
-        <img class="post-cover" [src]="post.cover">
-
-        <div class="about">
-
-          <div class="timing">
-            <small>{{ post.date | date }}</small> - <small> {{ post.stats?.text }}</small>
-          </div>
-
-          <h2>{{ post.title }}</h2>
-          <p>{{ post.description }}</p>
-
-        </div>
-      </article>
-    </a>
+    <ng-container *ngTemplateOutlet="postTemplate; context: {$implicit: post}"></ng-container>
   </li>
 
   <li class="post" *ngFor="let post of stream$ | async">
-    <a [routerLink]="post.route">
-      <article>
-        <img class="post-cover" [src]="post.cover">
-
-        <div class="about">
-          <h2>{{ post.title }}</h2>
-          <p>{{ post.description }}</p>
-        </div>
-      </article>
-    </a>
+    <ng-container *ngTemplateOutlet="postTemplate; context: {$implicit: post}"></ng-container>
   </li>
 </ul>
+
+<ng-template #postTemplate let-post>
+  <a [routerLink]="post.route">
+    <article>
+      <img class="post-cover" [src]="post.cover">
+
+      <div class="about">
+
+        <div class="timing">
+          <small>{{ post.date | date }}</small> - <small> {{ post.stats?.text }}</small>
+        </div>
+
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.description }}</p>
+
+      </div>
+    </article>
+  </a>
+</ng-template>

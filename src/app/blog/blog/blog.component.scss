@@ -29,8 +29,53 @@
   margin: 0 auto;
 }
 
+.new h2 {
+  font-size: 40px;
+  font-weight: bolder;
+}
+
+.post h2 {
+  font-size: 28px;
+  font-weight: bolder;
+}
+
 .post article {
   flex-direction: column;
+}
+
+.timing {
+  font-weight: bolder;
+}
+
+.post .timing {
+  margin-top: 2rem;
+}
+
+.post:nth-child(3n) a:hover article {
+  background-color: var(--blue);
+  color: white;
+
+  .timing {
+    color: var(--pink);
+  }
+}
+
+.post:nth-child(3n + 1) a:hover article {
+  background-color: var(--pink);
+  color: var(--black);
+
+  .timing {
+    color: var(--blue);
+  }
+}
+
+.post:nth-child(3n + 2) a:hover article {
+  background-color: var(--black);
+  color: white;
+
+  .timing {
+    color: var(--pink);
+  }
 }
 
 a:hover article {
@@ -67,7 +112,7 @@ article {
 }
 
 .post article {
-  min-height: 400px;
+  height: 460px;
   background-color: white;
 }
 
@@ -94,10 +139,6 @@ article {
 
     .post-cover {
       width: 100%;
-    }
-
-    .timing {
-      display: none;
     }
   }
 }
