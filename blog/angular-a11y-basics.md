@@ -1,6 +1,5 @@
 ---
 article: true
-unlisted: true
 title: Angular a11y basics
 description: '11 tips on how to make your apps more accessible'
 date: '2020-02-20T06:13:25Z'

@@ -1,6 +1,5 @@
 ---
 article: true
-unlisted: false
 title: 'Debugging - you’re doing it wrong'
 description: '10 techniques to find a bug in your code'
 date: '2019-07-23T06:13:25Z'

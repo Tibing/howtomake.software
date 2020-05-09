@@ -1,6 +1,5 @@
 ---
 article: true
-unlisted: false
 title: "Don't follow RxJS best practices!"
 description: "Nowadays more and more developers learn RxJS and use it properly with best practices in mind. But we shouldn't. All those so-called best practices require to learn something new and to add additional code in your projects. Moreover, using the best practices we're risking to create a good code base and make your teammates happy! 🌈 Stop being a gray mass! Break the rules! Stop using best practices!"
 date: '2019-07-15T06:13:25Z'
