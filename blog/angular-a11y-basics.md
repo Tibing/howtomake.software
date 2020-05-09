@@ -9,9 +9,9 @@ keyword: 'angular, rxjs, ngrx'
 cover: "https://res.cloudinary.com/practicaldev/image/fetch/s--bS6335O6--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/5mvjp58jvl0z0afmbigl.png"
 ---
 
-<link rel="canonical" href="https://dev.to/nikpoltoratsky/angular-a11y-11-tips-on-how-to-make-your-apps-more-accessible-400h">
-
 Nowadays approximately 15% of people have some kind of disability that doesn't allow them to use web applications in a common way - keyboard, mouse, touchscreen. That's where accessibility comes on to the stage.
+
+<link rel="canonical" href="https://dev.to/nikpoltoratsky/angular-a11y-11-tips-on-how-to-make-your-apps-more-accessible-400h">
 
 > Accessibility is the practice of making your websites usable by as many people as possible. We traditionally think of this as being about people with disabilities, but the practice of making sites accessible also benefits other groups such as those using mobile devices, or those with slow network connections. You might also think of accessibility as treating everyone the same, and giving them equal opportunities, no matter what their ability or circumstances. (source: [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Learn/Accessibility/What_is_accessibility))
 

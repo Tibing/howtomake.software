@@ -9,11 +9,11 @@ keyword: 'angular, rxjs, ngrx'
 cover: 'https://res.cloudinary.com/practicaldev/image/fetch/s--D4B0yZDu--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://res.cloudinary.com/practicaldev/image/fetch/s--6LIrSr00--/c_imagga_scale%2Cf_auto%2Cfl_progressive%2Ch_420%2Cq_auto%2Cw_1000/https://thepracticaldev.s3.amazonaws.com/i/fw7q9ekc48zx2ctbw0la.png'
 ---
 
-<link rel="canonical" href="https://dev.to/nikpoltoratsky/don-t-follow-rxjs-best-practices-4893">
-
 Nowadays more and more developers learn RxJS and use it properly with best practices in mind. But we shouldn't. All those so-called best practices require to learn something new and to add additional code in your projects.
 Moreover, using the best practices we're risking to create a good code base and make your teammates happy! 🌈
 Stop being a gray mass! Break the rules! Stop using best practices!
+
+<link rel="canonical" href="https://dev.to/nikpoltoratsky/don-t-follow-rxjs-best-practices-4893">
 
 Here are my suggestions to you on how to deal with those so-called RxJS best practices in Angular:
 

@@ -9,9 +9,9 @@ keyword: 'angular, rxjs, ngrx'
 cover: 'https://res.cloudinary.com/practicaldev/image/fetch/s--ydC-REVF--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://res.cloudinary.com/practicaldev/image/fetch/s--qKFVbp72--/c_imagga_scale%2Cf_auto%2Cfl_progressive%2Ch_420%2Cq_auto%2Cw_1000/https://thepracticaldev.s3.amazonaws.com/i/bonly95lbg5v383yj57m.png'
 ---
 
-<link rel="canonical" href="https://dev.to/nikpoltoratsky/debugging-you-re-doing-it-wrong-10-techniques-to-find-a-bug-in-your-code-4f41">
-
 Do you remember those long, long hours spent on debugging? When you're staring at a codebase and can't figure out what exactly went wrong? You're not alone! I think all developers struggle with debugging from time to time. That's why in the article I'm going to tell you about my favorite approaches to finding bugs in the code.
+
+<link rel="canonical" href="https://dev.to/nikpoltoratsky/debugging-you-re-doing-it-wrong-10-techniques-to-find-a-bug-in-your-code-4f41">
 
 ## Table of contents
 
