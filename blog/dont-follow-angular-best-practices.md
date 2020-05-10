@@ -23,3 +23,7 @@ make your teammates happy! 🌈 Stop being a gray mass! Break the rules! Stop us
 - [That testing is evil]()
 - [Track by sucks]()
 - [Angular CDK for weak developers]()
+
+<hr>
+
+## Why you shouldn't split your app into modules and components
