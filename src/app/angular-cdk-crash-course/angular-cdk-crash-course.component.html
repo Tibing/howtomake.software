@@ -6,7 +6,7 @@
 
     <div class="hero-btns">
       <a routerLink="/course/angular-cdk-crash-course" fragment="learn-more" class="learn-more-btn">Learn More</a>
-      <a routerLink="/course/angular-cdk-crash-course" fragment="watch-video" class="watch-video-btn">Watch Video</a>
+      <a routerLink="/course/angular-cdk-crash-course" fragment="subscribe" class="subscribe-btn">Subscribe</a>
     </div>
   </div>
 </div>
@@ -23,7 +23,7 @@
             useful
             functionalities that allows us to build more robust Angular application faster.</p>
         </div>
-        <div class="column video" id="watch-video">
+        <div class="column video" id="learn-more">
           <iframe width="560" height="315"
                   src="https://www.youtube.com/embed/videoseries?list=PLYjkVRRAFTbopgvwCG9-QJQAqI3kCVBKj"
                   frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -42,7 +42,7 @@
 
 <div class="container">
   <div class="agenda">
-    <div class="column content" id="learn-more">
+    <div class="column content">
 
       <ng-template #chevron let-show>
         <ng-container *ngIf="show">
@@ -184,9 +184,8 @@
 <div class="container">
   <div class="subscribe">
     <div>
-      <h2 id="subscribe">Subscribe to be notified of new videos!</h2>
-      <a target="_blank" href="https://motivated-musician-5947.ck.page/bd54abc356"
-         class="contact-me-btn">Subscribe</a>
+      <h2>Subscribe to be notified of new videos!</h2>
+      <a routerLink="/course/angular-cdk-crash-course" fragment="subscribe" class="contact-me-btn">Subscribe</a>
     </div>
   </div>
 </div>
@@ -261,6 +260,9 @@
       <iframe width="560" height="315"
               src="https://www.youtube.com/embed/videoseries?list=PLYjkVRRAFTbotLDp3uBPhlSkhkS1g9X04" frameborder="0"
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+      <np-subscribe id="subscribe"></np-subscribe>
+
       <h2 class="contact-me">Have ideas on how to make the course better? Contact me!</h2>
       <a href="mailto:nik.poltoratsky@gmail.com" class="contact-me-btn">nik.poltoratsky@gmail.com</a>
     </div>

@@ -85,7 +85,7 @@ iframe {
   .hero-btns {
     display: flex;
 
-    .learn-more-btn {
+    .subscribe-btn {
       background-color: var(--primary);
       color: white;
       border: none;
@@ -100,17 +100,18 @@ iframe {
       }
     }
 
-    .watch-video-btn {
-      background-color: var(--secondary);
-      color: black;
+    .learn-more-btn {
+      background-color: white;
+      color: var(--primary);
       border: none;
       border-radius: 50px;
+      margin-right: 1rem;
       font-size: 18px;
       padding: 18px 40px;
 
       &:hover {
-        background-color: black;
-        color: var(--secondary);
+        background-color: var(--primary);
+        color: white;
       }
     }
   }
@@ -323,7 +324,7 @@ iframe {
   }
 
   .contact-me {
-    margin-top: 8rem;
+    margin-top: 2rem;
   }
 
   img {
@@ -395,6 +396,11 @@ iframe {
   .nikita {
     margin-top: 36px;
     margin-bottom: 1rem;
+  }
+
+  np-subscribe {
+    width: 100%;
+    margin-top: 4rem;
   }
 }
 
