@@ -142,21 +142,6 @@ iframe {
   iframe {
     margin-left: 1.5rem;
   }
-
-  .free-course {
-    width: 100%;
-    border-radius: 10px;
-    background-color: white;
-    box-shadow: 0 10px 10px rgba(224, 224, 225, 0.203234);
-    color: var(--primary);
-    margin-top: 8rem;
-
-    p {
-      max-width: 50vw;
-      text-align: center;
-      margin: 1.75rem;
-    }
-  }
 }
 
 .agenda {
@@ -413,11 +398,7 @@ iframe {
   }
 
   .learn-more {
-    padding: 2rem;
-  }
-
-  .learn-more .free-course {
-    margin-top: 2rem;
+    padding: 4rem;
   }
 }
 
@@ -437,10 +418,6 @@ iframe {
   .learn-more {
     h2, p {
       text-align: center;
-    }
-
-    .free-course p {
-      max-width: inherit;
     }
 
     .description {
@@ -479,7 +456,7 @@ iframe {
 
 @media (max-width: 768px) {
   .learn-more {
-    padding: 0;
+    padding: 2rem 0;
   }
   .trainer .link:not(:last-of-type) {
     margin-right: 1rem;
