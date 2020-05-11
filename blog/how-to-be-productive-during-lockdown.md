@@ -12,7 +12,7 @@ cover: /assets/blog/why-reducer-is-reducer/cover.png
 Right now most of us are sitting at home because of COVID. I'm at the lockdown too and ought to work from home.
 
 It's almost two months since I've visited the office the last time. Working from home always was a huge pain for me.
-So many distractions, so many things to do, so a big room for procrastination! However, approximately a year ago everything
+So many distractions, so many things to do, so a big room for procrastnation! However, approximately a year ago everything
 changed and now I believe I'm as productive as if I was working from the office.
 
 At this article I'm introducing the only way to work that made me productive.
