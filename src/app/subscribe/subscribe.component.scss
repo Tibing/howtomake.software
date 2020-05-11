@@ -1,0 +1,21 @@
+::ng-deep form {
+  margin: 4rem auto;
+
+  p, input, span {
+    font-weight: 300 !important;
+    font-size: 1rem !important;
+  }
+
+  p, input, span, h1 {
+    line-height: 1.5 !important;
+  }
+
+  p {
+    color: var(--black) !important;
+  }
+
+  .formkit-header, .formkit-subheader {
+    z-index: auto !important;
+  }
+}
+

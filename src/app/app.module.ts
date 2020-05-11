@@ -14,6 +14,7 @@ import { AcquaintedComponent } from './home/acquainted/acquainted.component';
 import { SocialsComponent } from './socials/socials.component';
 import { AngularCdkCrashCourseComponent } from './angular-cdk-crash-course/angular-cdk-crash-course.component';
 import { AboutComponent } from './about/about.component';
+import { SubscribeModule } from './subscribe/subscribe.module';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { AboutComponent } from './about/about.component';
     AppRoutingModule,
     ScullyLibModule,
     ReactiveFormsModule,
+    SubscribeModule,
   ],
   bootstrap: [AppComponent],
 })
