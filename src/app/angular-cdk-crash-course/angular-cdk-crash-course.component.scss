@@ -205,7 +205,7 @@ iframe {
     overflow: hidden;
 
     &.drag.visible {
-      height: calc(67px * 3);
+      height: calc(67px * 4);
     }
 
     &.overlays.visible, &.tables.visible {
