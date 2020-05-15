@@ -10,8 +10,8 @@ import { Meta, Title } from '@angular/platform-browser';
 })
 export class AngularCdkCrashCourseComponent {
   drag = true;
-  overlays = true;
-  tables = true;
+  overlays = false;
+  tables = false;
 
   constructor(title: Title, meta: Meta) {
     title.setTitle('Angular CDK Crash Course');
