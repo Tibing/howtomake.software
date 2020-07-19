@@ -1,4 +1,4 @@
-@import 'code-highlight';
+@import "code-highlight";
 
 :host {
   display: block;
@@ -17,16 +17,19 @@
   }
 
   .container ::ng-deep {
-    a, p, li {
+    a,
+    p,
+    li {
       font-size: 19px;
-      font-family: 'Rubik', sans-serif;
+      font-family: "Rubik", sans-serif;
       font-weight: 300;
       line-height: 30px;
     }
 
-    span.token {
-      font-family: 'Fira Mono', monospace;
-      font-size: 1rem;
+    span.token,
+    code {
+      font-family: "Fira Mono", monospace;
+      font-size: 16px;
     }
 
     p {
@@ -42,7 +45,11 @@
       border-radius: 0.5rem;
     }
 
-    h2, h3, h4, h5, h6 {
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
       font-weight: normal;
     }
 
@@ -52,6 +59,10 @@
 
     h3 {
       font-size: 24px;
+    }
+
+    h4 {
+      font-size: 20px;
     }
 
     blockquote {
@@ -114,6 +125,7 @@ header {
     display: inline-block;
     width: 1em;
     margin-left: -1em;
+    position: absolute;
   }
 
   hr {
@@ -144,11 +156,13 @@ header {
   }
 
   :host .container ::ng-deep {
-     video {
-       border-radius: 0;
-     }
+    video {
+      border-radius: 0;
+    }
 
-    a, p, li {
+    a,
+    p,
+    li {
       font-size: 1rem;
       line-height: 26px;
     }
