@@ -126,7 +126,7 @@ article {
 
 @media (max-width: 768px) {
   :host {
-    padding: 124px 0 4rem;
+    padding: 107px 0 4rem;
   }
 
   .new, .post {
@@ -140,11 +140,5 @@ article {
     .post-cover {
       width: 100%;
     }
-  }
-}
-
-@media (max-width: 400px) {
-  :host {
-    padding-top: 164px;
   }
 }
