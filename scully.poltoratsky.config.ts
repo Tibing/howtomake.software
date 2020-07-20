@@ -1,6 +1,7 @@
+import { ScullyConfig } from '@scullyio/scully';
 const { articlePlugin } = require('./plugins/article');
 
-exports.config = {
+export const config: ScullyConfig = {
   projectRoot: './src',
   projectName: 'poltoratsky',
   outDir: './dist/static',

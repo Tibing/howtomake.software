@@ -26,6 +26,7 @@
     "@scullyio/init": "^1.0.0-beta.0",
     "@scullyio/ng-lib": "^1.0.0-beta.0",
     "@scullyio/scully": "^1.0.0-beta.0",
+    "http-server": "^0.12.3",
     "prismjs": "^1.19.0",
     "reading-time": "^1.2.0",
     "rxjs": "~6.5.4",
@@ -34,7 +35,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1000.3",
-    "@angular/cli": "~9.0.3",
+    "@angular/cli": "~10.0.3",
     "@angular/compiler-cli": "~10.0.4",
     "@angular/language-service": "~10.0.4",
     "@types/jasmine": "~3.5.0",

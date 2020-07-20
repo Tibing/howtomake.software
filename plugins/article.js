@@ -1,5 +1,5 @@
-const { contentRenderPlugin } = require('@scullyio/scully/renderPlugins/contentRenderPlugin');
-const { contentFolderPlugin } = require('@scullyio/scully/routerPlugins/contentFolderPlugin');
+const { contentRenderPlugin } = require('@scullyio/scully/lib/renderPlugins/contentRenderPlugin');
+const { contentFolderPlugin } = require('@scullyio/scully/lib/routerPlugins/contentFolderPlugin');
 const { registerPlugin } = require('@scullyio/scully');
 const { readFileSync } = require('fs');
 const readingTime = require('reading-time');
