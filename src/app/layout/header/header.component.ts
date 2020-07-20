@@ -1,7 +1,7 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, ViewChild } from '@angular/core';
 import { NavigationEnd, Router, RouterEvent } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { fromEvent } from 'rxjs';
 
 
 @Component({
@@ -10,21 +10,30 @@ import { filter } from 'rxjs/operators';
   templateUrl: './header.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements AfterViewInit {
 
-  hamburger = new FormControl();
+  @ViewChild('toggle', { read: ElementRef }) toggle: ElementRef;
 
   constructor(private router: Router) {
   }
 
-  ngOnInit(): void {
-    this.hamburger.valueChanges
-      .subscribe((opened: boolean) => document.documentElement.style.overflow = opened ? 'hidden' : 'auto');
+  ngAfterViewInit(): void {
+    fromEvent(this.toggle.nativeElement, 'change')
+      .subscribe(() => this.toggleBodyOverflow(this.toggle.nativeElement.checked));
 
     this.router.events
       .pipe(
         filter((event: RouterEvent) => event instanceof NavigationEnd),
       )
-      .subscribe(() => this.hamburger.patchValue(false));
+      .subscribe(() => this.toggle.nativeElement.checked = false);
+  }
+
+  toggleBodyOverflow(checked: boolean): void {
+    document.documentElement.style.overflow = checked ? 'hidden' : 'auto';
+  }
+
+  close(): void {
+    this.toggle.nativeElement.checked = false;
+    this.toggleBodyOverflow(false);
   }
 }
