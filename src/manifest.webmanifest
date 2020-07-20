@@ -1,6 +1,12 @@
 {
- "name": "howtomake.software",
- "icons": [
+  "name": "howtomake.software",
+  "short_name": "howtomake.software",
+  "theme_color": "#ff5971",
+  "background_color": "#ff5971",
+  "display": "standalone",
+  "scope": "./",
+  "start_url": "./",
+  "icons": [
   {
    "src": "\/android-icon-36x36.png",
    "sizes": "36x36",
@@ -37,5 +43,5 @@
    "type": "image\/png",
    "density": "4.0"
   }
- ]
+  ]
 }

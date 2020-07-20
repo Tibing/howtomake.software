@@ -14,6 +14,8 @@ import { SocialsComponent } from './socials/socials.component';
 import { AngularCdkCrashCourseComponent } from './angular-cdk-crash-course/angular-cdk-crash-course.component';
 import { AboutComponent } from './about/about.component';
 import { SubscribeModule } from './subscribe/subscribe.module';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -34,6 +36,7 @@ import { SubscribeModule } from './subscribe/subscribe.module';
     AppRoutingModule,
     ScullyLibModule,
     SubscribeModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   bootstrap: [AppComponent],
 })
