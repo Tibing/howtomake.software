@@ -20,6 +20,11 @@
   h1 {
     margin: 1rem 0;
   }
+
+  .post-cover {
+    max-height: 200px;
+    object-fit: cover;
+  }
 }
 
 .container {
@@ -98,7 +103,8 @@ article {
   }
 }
 
-.new, .post {
+.new,
+.post {
   margin: 0.5rem;
 }
 
@@ -106,13 +112,13 @@ article {
   width: calc(100% - 1rem);
 
   .post-cover {
-    width: 55%;
+    max-height: 300px;
     margin-right: 1rem;
   }
 }
 
 .post article {
-  height: 460px;
+  // height: 460px;
   background-color: white;
 }
 
@@ -127,18 +133,20 @@ article {
 @media (max-width: 768px) {
   :host {
     padding: 107px 0 4rem;
+
+    .post-cover {
+      width: 100%;
+      max-height: 300px;
+    }
   }
 
-  .new, .post {
+  .new,
+  .post {
     margin: 0.5rem 0;
     width: 100%;
   }
 
   .new article {
     flex-direction: column;
-
-    .post-cover {
-      width: 100%;
-    }
   }
 }
