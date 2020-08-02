@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "rm -rf dist && ng build --prod && npm run scully -- --scanRoutes",
+    "build": "rm -rf dist && ng build --prod --stats-json && npm run scully -- --scanRoutes",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
@@ -51,6 +51,7 @@
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.2",
     "protractor": "~5.4.3",
+    "scully-plugin-disable-angular": "^5.4.0",
     "ts-node": "~8.3.0",
     "tslint": "~5.18.0",
     "typescript": "~3.9.7",
