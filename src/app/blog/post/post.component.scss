@@ -71,6 +71,14 @@
       margin-left: 0;
       font-style: italic;
     }
+
+    iframe {
+      border: none;
+      width: calc(100% + 2rem);
+      height: 80vh;
+      margin-left: -1rem;
+      margin-bottom: 1.75rem;
+      border-radius: 0.5rem;    }
   }
 }
 
@@ -173,6 +181,10 @@ header {
 
     h3 {
       font-size: 20px;
+    }
+
+    iframe {
+      border-radius: 0;
     }
   }
 }

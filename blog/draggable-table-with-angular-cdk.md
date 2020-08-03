@@ -222,7 +222,7 @@ What's going on here? We're just receiving a `CdkDragDrop` event. It contains al
 
 And finally, we're just publishing a new version of data to the table! Easy as that! And here is the result 👇
 
-![Draggable table demo](/assets/blog/draggable-table-with-angular-cdk/demo.gif)
+<iframe src="https://stackblitz.com/edit/draggable-table?embed=1&file=src/app/app.component.ts&hideExplorer=1&hideNavigation=1&view=preview"></iframe>
 
 ## Recap
 
