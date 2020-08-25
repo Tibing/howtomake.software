@@ -1,6 +1,6 @@
 ---
 article: true
-unlisted: true
+unlisted: false
 title: Draggable Table with Angular CDK
 description: "Learn how to rearrange the data in the table using Angular CDK!"
 date: "2020-07-19T14:14:14Z"
