@@ -11,7 +11,6 @@ import { MeComponent } from './home/me/me.component';
 import { BlogComponent } from './home/blog/blog.component';
 import { AcquaintedComponent } from './home/acquainted/acquainted.component';
 import { SocialsComponent } from './socials/socials.component';
-import { AngularCdkCrashCourseComponent } from './angular-cdk-crash-course/angular-cdk-crash-course.component';
 import { AboutComponent } from './about/about.component';
 import { SubscribeModule } from './subscribe/subscribe.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
@@ -28,7 +27,6 @@ import { environment } from '../environments/environment';
     BlogComponent,
     AcquaintedComponent,
     SocialsComponent,
-    AngularCdkCrashCourseComponent,
     AboutComponent,
   ],
   imports: [

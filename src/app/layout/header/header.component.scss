@@ -25,20 +25,6 @@ a {
   }
 }
 
-.angular-cdk-crash-course {
-  padding: 0.5rem;
-  background-color: var(--blue);
-  color: var(--yellow);
-  text-align: center;
-  display: block;
-  box-sizing: border-box;
-  width: 100vw;
-
-  &:hover {
-    text-decoration: underline;
-  }
-}
-
 .menu {
   display: block;
 
@@ -70,34 +56,11 @@ a {
           font-weight: bold;
           transition: all 0.2s ease-in-out;
           font-size: 3rem;
-          font-family: 'Fira Mono', monospace;
+          font-family: "Fira Mono", monospace;
           color: var(--black);
 
           &:hover {
             text-decoration: underline;
-          }
-
-          &.angular-cdk-crash-course-menu-item {
-            color: var(--pink);
-            animation: animated-text-color 3s infinite;
-
-            @keyframes animated-text-color {
-              0% {
-                color: var(--yellow);
-              }
-              25% {
-                color: var(--pink);
-              }
-              50% {
-                color: var(--black);
-              }
-              75% {
-                color: var(--blue);
-              }
-              100% {
-                color: var(--yellow);
-              }
-            }
           }
 
           @media (max-width: 600px) {
@@ -136,7 +99,6 @@ a {
 }
 
 #toggle:checked {
-
   & ~ nav {
     opacity: 1;
     visibility: visible;
@@ -148,7 +110,7 @@ a {
         @for $i from 1 through 4 {
           $t: $i * 0.1;
           &:nth-child(#{$i}) {
-            transition: all 0.3s cubic-bezier(.6, 0, .8, 1.5) #{$t}s;
+            transition: all 0.3s cubic-bezier(0.6, 0, 0.8, 1.5) #{$t}s;
           }
         }
       }
