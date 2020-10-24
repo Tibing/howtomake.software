@@ -46,6 +46,11 @@
 
 .post article {
   flex-direction: column;
+  height: calc(100% - 2rem);
+}
+
+.post img {
+  height: 195px;
 }
 
 .timing {
