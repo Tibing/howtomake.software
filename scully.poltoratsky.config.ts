@@ -1,4 +1,5 @@
 import { ScullyConfig, setPluginConfig } from '@scullyio/scully';
+import { docLink } from '@scullyio/scully-plugin-docs-link-update';
 const { articlePlugin } = require('./plugins/article');
 const { DisableAngular } = require('scully-plugin-disable-angular');
 
@@ -16,7 +17,7 @@ export const config: ScullyConfig = {
       slug: {
         folder: './blog'
       },
-      postRenderers: [DisableAngular],
+      postRenderers: [DisableAngular, docLink],
     },
   },
 };

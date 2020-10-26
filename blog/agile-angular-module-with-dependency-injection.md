@@ -21,10 +21,10 @@ In this article, I'll be talking about how to configure Angular components and s
 
 ## Table of contents:
 
-1. [How we use DI most of all](/blog/agile-angular-module-with-dependency-injection#how-we-use-di-most-of-all)
-2. [Putting data in the DI](/blog/agile-angular-module-with-dependency-injection#putting-data-in-the-di)
-3. [Building configurable modules](/blog/agile-angular-module-with-dependency-injection#building-configurable-modules)
-4. [Why it might be not a good idea?](/blog/agile-angular-module-with-dependency-injection#why-its-not-a-good-idea)
+1. [How we use DI most of all](#how-we-use-di-most-of-all)
+2. [Putting data in the DI](#putting-data-in-the-di)
+3. [Building configurable modules](#building-configurable-modules)
+4. [Why it might be not a good idea?](#why-its-not-a-good-idea)
 
 ---
 
