@@ -150,9 +150,28 @@ header {
   margin-top: 4rem;
 }
 
+np-wide-link {
+  margin-top: 1rem;
+  margin-bottom: 4rem;
+}
+
+.comments {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 @media (max-width: 768px) {
   :host h1 {
     font-size: 32px;
+  }
+
+  .comments {
+    margin-left: -1rem;
+
+    ::ng-deep .clip-shadow {
+      display: none;
+    }
   }
 
   .container {

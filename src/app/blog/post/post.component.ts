@@ -26,6 +26,10 @@ export class PostComponent implements AfterViewChecked {
     map((route: ScullyRoute) => route.date),
   );
 
+  comments$: Observable<string> = this.scullyRoutesService.getCurrent().pipe(
+    map((route: ScullyRoute) => route.comments),
+  );
+
   constructor(private metadataService: MetadataService,
               private scullyRoutesService: ScullyRoutesService) {
   }

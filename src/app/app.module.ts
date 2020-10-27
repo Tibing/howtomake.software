@@ -9,12 +9,12 @@ import { HeaderComponent } from './layout/header/header.component';
 import { HomeComponent } from './home/home.component';
 import { MeComponent } from './home/me/me.component';
 import { BlogComponent } from './home/blog/blog.component';
-import { AcquaintedComponent } from './home/acquainted/acquainted.component';
 import { SocialsComponent } from './socials/socials.component';
 import { AboutComponent } from './about/about.component';
 import { SubscribeModule } from './subscribe/subscribe.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { WideLinkModule } from './wide-link/wide-link.module';
 
 
 @NgModule({
@@ -25,7 +25,6 @@ import { environment } from '../environments/environment';
     HomeComponent,
     MeComponent,
     BlogComponent,
-    AcquaintedComponent,
     SocialsComponent,
     AboutComponent,
   ],
@@ -35,6 +34,7 @@ import { environment } from '../environments/environment';
     ScullyLibModule,
     SubscribeModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    WideLinkModule,
   ],
   bootstrap: [AppComponent],
 })

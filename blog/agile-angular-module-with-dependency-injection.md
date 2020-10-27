@@ -7,6 +7,7 @@ date: "2020-10-24T19:11:25Z"
 author: "Nikita Poltoratsky"
 keyword: "angular, rxjs, ngrx"
 cover: /assets/blog/agile-angular-module-with-dependency-injection/cover.jpg
+comments: "https://twitter.com/NikPoltoratsky/status/1316699591161663491"
 ---
 
 If you already built a few Angular applications it might be you already spotted how it may be tricky to build easily configurable modules.
@@ -201,15 +202,13 @@ Then, we're using it:
 ```typescript
 @NgModule({
   imports: [
-
     // now we can do this:
     DialogModule.forRoot({}),
   ],
   providers: [
-
     // instead of this:
     { provide: DIALOG_CONFIG, useValue: config },
-  ]
+  ],
 })
 export class AppModule {}
 ```
@@ -256,7 +255,6 @@ After that, I'm just using the dialog:
 ```typescript
 @Component({})
 export class MyComponent {
-
   showDialog() {
     this.dialog.show();
   }

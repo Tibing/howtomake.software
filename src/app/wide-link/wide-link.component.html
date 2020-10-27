@@ -1,0 +1,13 @@
+<div class="clip-shadow"></div>
+
+<a *ngIf="!external" [routerLink]="link" class="clip">
+  <span class="font-fira-mono text">
+    {{ text }}
+  </span>
+</a>
+
+<a *ngIf="external" [href]="link" target="blank" class="clip">
+  <span class="font-fira-mono text">
+    {{ text }}
+  </span>
+</a>

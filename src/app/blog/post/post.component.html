@@ -14,6 +14,15 @@
     <scully-content></scully-content>
 
     <hr>
+
+    <div class="comments" *ngIf="comments$ | async as comments">
+      <np-wide-link
+      [external]="true"
+      text="Leave a comment here 🚀"
+      [link]="comments"
+      ></np-wide-link>
+    </div>
+
     <np-me-footer></np-me-footer>
     <a routerLink="blog" class="check-other-posts"><== Check Other Posts</a>
 
