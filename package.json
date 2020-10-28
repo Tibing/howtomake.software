@@ -11,7 +11,8 @@
     "scully": "scully",
     "scully:serve": "scully serve",
     "analyze": "npm run build:stats && webpack-bundle-analyzer dist/poltoratsky/stats.json",
-    "build:stats": "ng build --stats-json"
+    "build:stats": "ng build --stats-json",
+    "resize": "node ./tools/resize-img.js"
   },
   "private": true,
   "dependencies": {
@@ -52,6 +53,7 @@
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.2",
     "protractor": "~5.4.3",
+    "resize-img": "^2.0.0",
     "scully-plugin-disable-angular": "^5.4.0",
     "ts-node": "~8.3.0",
     "tslint": "~5.18.0",
