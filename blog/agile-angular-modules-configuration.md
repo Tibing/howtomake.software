@@ -1,7 +1,7 @@
 ---
 article: true
 unlisted: true
-title: Agile Angular modules with Dependency Injection
+title: Agile Angular modules configuration
 description: Learn how Dependency Injection can help you building agile Angular systems
 date: "2020-10-24T19:11:25Z"
 author: "Nikita Poltoratsky"
