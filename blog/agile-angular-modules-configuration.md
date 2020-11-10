@@ -7,7 +7,7 @@ date: "2020-10-24T19:11:25Z"
 author: "Nikita Poltoratsky"
 keyword: "angular, rxjs, ngrx"
 cover: /assets/blog/agile-angular-module-with-dependency-injection/cover.jpg
-comments: "https://twitter.com/NikPoltoratsky/status/1316699591161663491"
+comments: "https://twitter.com/NikPoltoratsky/status/1326159923009507328"
 ---
 
 If you already built a few Angular applications it might be you already spotted how it may be tricky to build easily configurable modules.
