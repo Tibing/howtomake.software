@@ -15,7 +15,12 @@
 <ng-template #postTemplate let-post>
   <a [href]="post.route">
     <article>
-      <img class="post-cover" [src]="post.cover" loading="lazy" />
+
+      <picture>
+        <source type="image/webp" [srcset]="post.cover | webp">
+        <source type="image/jpeg" [srcset]="post.cover">
+        <img class="post-cover" [src]="post.cover" loading="lazy" />
+      </picture>
 
       <div class="about">
         <div class="timing">

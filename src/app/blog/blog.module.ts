@@ -8,10 +8,11 @@ import { PostComponent } from './post/post.component';
 import { MeFooterComponent } from './me-footer/me-footer.component';
 import { SubscribeModule } from '../subscribe/subscribe.module';
 import { WideLinkModule } from '../wide-link/wide-link.module';
+import { WebpPipe } from './blog/webp';
 
 
 @NgModule({
-  declarations: [BlogComponent, PostComponent, MeFooterComponent],
+  declarations: [BlogComponent, PostComponent, MeFooterComponent, WebpPipe],
   imports: [CommonModule, BlogRoutingModule, ScullyLibModule, SubscribeModule, WideLinkModule],
 })
 export class BlogModule {
