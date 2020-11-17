@@ -2,7 +2,7 @@
 article: true
 unlisted: true
 title: Shitty smell of shared folder 💩
-description: Learn how Dependency Injection can help you building agile Angular systems
+description: Learn why the shared folders are a bad practice
 date: "2020-11-17T19:11:25Z"
 author: "Nikita Poltoratsky"
 keyword: "angular, rxjs, ngrx, architecture"
