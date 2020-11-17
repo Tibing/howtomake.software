@@ -139,17 +139,14 @@ article {
     padding: 66px 0 4rem;
   }
 
-  .new .post-cover {
-    height: 300px;
-  }
-
   .new,
   .post {
     margin: 0.5rem 0;
     width: 100%;
 
     .post-cover {
-      width: 100%;
+      width: calc(100vw - 2rem);
+      height: auto;
     }
   }
 
