@@ -4,6 +4,7 @@ const { registerPlugin } = require('@scullyio/scully');
 const { readFileSync } = require('fs');
 const readingTime = require('reading-time');
 const marked = require('marked');
+const { extname } = require('path');
 require('prismjs/prism');
 require('prismjs/plugins/toolbar/prism-toolbar.js');
 require('prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard.js');
@@ -30,11 +31,26 @@ function isArticlePlugin(routes) {
 }
 
 const markdownPlugin = async (raw) => {
+  const renderer = new marked.Renderer();
   marked.setOptions({
+    renderer,
     highlight(code, lang) {
       return Prism.highlight(code, Prism.languages[lang], lang);
     }
   });
+  renderer.image = (href, title, text) => {
+    if (['.jpeg', '.jpg', '.png'].includes(extname(href))) {
+      return `
+        <picture>
+          <source type="image/webp" srcset="${href.split('.').slice(0, -1).join('.')}.webp">
+          <source type="image/jpeg" srcset="${href}">
+          <img src="${href}" loading="lazy" alt="${text}">
+        </picture>
+      `;
+    }
+
+    return `<img src="${href}" alt="${text}">`;
+  }
   return marked(raw)
 };
 

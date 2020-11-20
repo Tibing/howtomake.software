@@ -8,6 +8,7 @@ author: "Nikita Poltoratsky"
 keyword: "angular, rxjs, ngrx, architecture"
 cover: /assets/blog/shitty-smell-of-shared-folder/cover.jpg
 ---
+
 I don't want to beat around the bushes, so, I'll just say it. If you have shared or common or utils or helpers or "any other folder with freakingly common names" that means your code smells 💩.
 
 ## Where's the problem?
@@ -16,7 +17,7 @@ It might be you have no problem for now. While there only a few files in your sh
 
 And in a few months you're ending up like this:
 
-![shared folder weight](/assets/blog/shitty-smell-of-shared-folder/shared-folder.webp)
+![shared folder weight](/assets/blog/shitty-smell-of-shared-folder/shared-folder.png)
 
 Because any time you need to create a new file/function/class/whatever you need to think about where to put it. However, thinking is hard, that's why we quite often decide to put it in the shared folder and move it somewhere else later, or not... And it stays at the same place forever...
 
@@ -26,7 +27,7 @@ Finally, we have a project where a good few of the code leaves in the shared fol
 
 Check where some specific functionality is used in the project. Does it really ought to be shared? Does it really used in multiple places across the app?
 
-![where put the code](/assets/blog/shitty-smell-of-shared-folder/where-put-code.webp)
+![where put the code](/assets/blog/shitty-smell-of-shared-folder/where-put-code.png)
 
 If the code is used locally in one place or in a few places but they're not widely spread across the project, then it's a good idea to put it locally, near the usage place.
 
@@ -55,4 +56,3 @@ As a recap, I would say - "think". Don't leave the structure of the app as-is. Y
 > If the code is used locally in one place or in a few places but they're not widely spread across the project, then it's a good idea to put it locally, near the usage place.
 >
 > If the code is used globally in multiple places in different parts of the project, then it's a good idea to put it in the separate feature library and include it everywhere you need it.
-
