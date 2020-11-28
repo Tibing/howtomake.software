@@ -28,6 +28,11 @@ import { EmotionControlService } from './emotion-control.service';
         <div></div>
         <div></div>
       </div>
+
+      <div class="text">
+        <span>Please wait</span>
+        <span>Loading Emotion Detector 😲</span>
+      </div>
     </div>
   `,
 })

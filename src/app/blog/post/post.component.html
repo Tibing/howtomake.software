@@ -8,11 +8,11 @@
   </div>
 </header>
 
-<div class="addon" *ngIf="addon$ | async as addon">
-  <ng-container *ngComponentOutlet="addon"></ng-container>
-</div>
-
 <div class="master-container">
+  <div class="addon" *ngIf="addon$ | async as addon">
+    <ng-container *ngComponentOutlet="addon"></ng-container>
+  </div>
+
   <article class="container line-numbers">
 
     <scully-content></scully-content>
