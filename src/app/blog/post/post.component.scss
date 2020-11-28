@@ -5,6 +5,11 @@
   background: var(--gray);
   padding-top: 66px;
 
+  .addon {
+    display: flex;
+    justify-content: center;
+  }
+
   h1 {
     margin-bottom: 1rem;
     font-size: 40px;

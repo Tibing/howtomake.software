@@ -133,6 +133,46 @@
           }
         }
       }
+    },
+    "emotion-control": {
+      "projectType": "library",
+      "root": "projects/emotion-control",
+      "sourceRoot": "projects/emotion-control/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/emotion-control/tsconfig.lib.json",
+            "project": "projects/emotion-control/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/emotion-control/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/emotion-control/src/test.ts",
+            "tsConfig": "projects/emotion-control/tsconfig.spec.json",
+            "karmaConfig": "projects/emotion-control/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/emotion-control/tsconfig.lib.json",
+              "projects/emotion-control/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "poltoratsky",

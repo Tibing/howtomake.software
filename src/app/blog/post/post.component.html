@@ -8,6 +8,10 @@
   </div>
 </header>
 
+<div class="addon" *ngIf="addon$ | async as addon">
+  <ng-container *ngComponentOutlet="addon"></ng-container>
+</div>
+
 <div class="master-container">
   <article class="container line-numbers">
 
