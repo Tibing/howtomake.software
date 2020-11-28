@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ScullyLibModule } from '@scullyio/ng-lib';
-import { EmotionControlModule } from 'emotion-control';
 
 import { BlogRoutingModule } from './blog-routing.module';
 import { BlogComponent } from './blog/blog.component';
@@ -14,7 +13,7 @@ import { WebpPipe } from './blog/webp';
 
 @NgModule({
   declarations: [BlogComponent, PostComponent, MeFooterComponent, WebpPipe],
-  imports: [CommonModule, BlogRoutingModule, ScullyLibModule, SubscribeModule, WideLinkModule, EmotionControlModule],
+  imports: [CommonModule, BlogRoutingModule, ScullyLibModule, SubscribeModule, WideLinkModule],
 })
 export class BlogModule {
 }
