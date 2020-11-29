@@ -12,12 +12,12 @@ component: 'emotion-recognition'
 
 Creating and promoting Angular applications always a hard job. Understanding whether users like your app or not is even harder.
 
-But what if I tell you, that you can track users emotions and understand what do they think about your app.
+But what if I tell you, that you can track users' emotions and understand what do they think about your app.
 
-The idea is the following - create a plugin that will use the camer on the users device and analyzes user's emotions at the realtime.
+The idea is the following - create a plugin that will use the camera on the user's device and analyzes the user's emotions in the realtime.
 But the users don't want to send their faces to our servers, that's why we have to make it in runtime at the browser.
-Then, send only user's reaction to our analytics, not their faces.
-After that, we'll be able to juxtapose user's reaection with the analytics and understand what exactly user likes or dislikes.
+Then, send only the user's reactions to our analytics, not their faces.
+After that, we'll be able to juxtapose the user's reaction with the analytics and understand what exactly the user likes or dislikes.
 
 If you still reading, I think you're intrigued.
 So, let's get our hands dirty.
@@ -32,9 +32,9 @@ First of all, create a new Angular project:
 ng new emotion-recognition
 ```
 
-Then, we need to install the lib for the face recognition.
+Then, we need to install the lib for face recognition.
 I prefer using `face-api.js`.
-We'll use it to detect faces and recognize emotions. 
+We'll use it to detect faces and recognize emotions.
 
 ```bash
 npm i face-api.js
@@ -54,7 +54,7 @@ To do so, let's add a `video` tag:
 <video #video width="600" height="450"></video>
 ```
 
-The `video` tag will display what camera sees.
+The `video` tag will display what the camera sees.
 So, we need to load a video stream from the camera to the `video` tag.
 
 ```typescript
@@ -76,9 +76,9 @@ export class AppComponent {
 }
 ```
 
-At the snippet above we're requesting user's permission for the camera with the `navigator.mediaDevices.getUserMedia({ video: true })`. When the user grants access to the camera at the browser's prompt it'll return a promise with the video stream inside.
+In the snippet above we're requesting the user's permission for the camera with the `navigator.mediaDevices.getUserMedia({ video: true })`. When the user grants access to the camera at the browser's prompt it'll return a promise with the video stream inside.
 
-At this stage you ought to see a video element on the screen. When the app loads, it has to request an access to the camera. And when an access is granted you ought to see your face on the screen 🥳.
+At this stage, you ought to see a video element on the screen. When the app loads, it has to request access to the camera. And when access is granted you ought to see your face on the screen 🥳.
 
 ## Setup face-api.js
 
@@ -101,7 +101,7 @@ export class AppComponent {
 }
 ```
 
-The code above will load required AI model in the browser and will allow you doint emotions recognition. 
+The code above will load the required AI model in the browser and will allow you to do emotions recognition.
 But to make it work, you need to add emotion recognition models to your assets: '/assets/emotion-recognition'.
 You can find them at the [face-api.js repository](https://github.com/justadudewhohacks/face-api.js/tree/master/weights).
 
@@ -129,11 +129,11 @@ export class AppComponent {
 
 Whoa, not many lines but tons of interesting stuff is above. Let's figure it out!
 
-First of all we're using `detectSingleFace` to run face recognition.
+First of all, we're using `detectSingleFace` to run face recognition.
 We're passing `video` and `new SsdMobilenetv1Options()` inside.
-The library will read current picture at the `video` and'll try to find a face on it using `SsdMobilenetv1O` AI model.
+The library will read the current picture at the `video` and wll try to find a face on it using `SsdMobilenetv1O` AI model.
 
-At the next line we're asking it to recognize face expressions also. And finally, retrieving the most likely expression. Here's the list of the possible emotions:
+In the next line, we're asking it to recognize facial expressions also. And finally, retrieving the most likely expression. Here's the list of the possible emotions:
 
 - neutral
 - happy
@@ -141,11 +141,11 @@ At the next line we're asking it to recognize face expressions also. And finally
 - angry
 - fearful
 - disgusted
-- surprised 
+- surprised
 
 The variable `expression` will contain one of the strings from the list above.
 
-Now we can recognize emotion of the person using his camera - that's great! But it'll be done once. While we need to do that periodically. The best solution is to `requestAnimationFrame` API to schedule recognition between rerenders.
+Now we can recognize the emotion of the person using his camera - that's great! But it'll be done once. While we need to do that periodically. The best solution is to `requestAnimationFrame` API to schedule recognition between rerenders.
 
 ## Scheduling recognition
 
@@ -177,7 +177,7 @@ export class AppComponent {
 }
 ```
 
-Using that technique will allow us recognize peoples' emotions constantly with great performance! 😅
+Using that technique will allow us to recognize peoples' emotions constantly with great performance! 😅
 
 Here's the listing of the full code:
 
@@ -222,10 +222,12 @@ export class AppComponent {
 
 ## Final words
 
-At the top of the page you can find working example of idea.
+Great! You did it! You learned how to recognize people's emotions at the browser.
+
+At the top of the page, you can find a working example of an idea.
 Also, [here's the full source code](https://github.com/Tibing/howtomake.software/tree/master/projects/emotion-control/src/lib){:target="blank"}.
 
-I know that it sounds a bit awkward to ask users about camera access but why not to try 😅.
+I know that it sounds a bit awkward to ask users about camera access but why not try 😅.
 If you have any thoughts on that stuff, please, let me know.
 
-I'm waiting for your comments about the idea! Please, [reach me on twitter](https://twitter.com/NikPoltoratsky).
+I'm waiting for your comments about the idea! Please, [reach me on Twitter](https://twitter.com/NikPoltoratsky).
