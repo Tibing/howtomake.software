@@ -220,6 +220,12 @@ export class AppComponent {
 
 ---
 
-## Recap
+## Final words
 
-At the top of the page you can find working example of this idea. Also, [here's the source code](https://github.com/Tibing/howtomake.software/tree/master/projects/emotion-control/src/lib){:target="blank"}.
+At the top of the page you can find working example of idea.
+Also, [here's the full source code](https://github.com/Tibing/howtomake.software/tree/master/projects/emotion-control/src/lib){:target="blank"}.
+
+I know that it sounds a bit awkward to ask users about camera access but why not to try 😅.
+If you have any thoughts on that stuff, please, let me know.
+
+I'm waiting for your comments about the idea! Please, [reach me on twitter](https://twitter.com/NikPoltoratsky).
