@@ -3,10 +3,10 @@ article: true
 unlisted: true
 title: Emotion Recognition
 description: Learn how to recognize people's emotions in Angular
-date: "2020-10-24T19:11:25Z"
+date: "2020-11-30T19:11:25Z"
 author: "Nikita Poltoratsky"
 keyword: "angular, rxjs, ngrx"
-cover: /assets/blog/agile-angular-module-with-dependency-injection/cover.jpg
+cover: /assets/blog/emotion-recognition/cover.png
 component: 'emotion-recognition'
 ---
 
@@ -222,12 +222,23 @@ export class AppComponent {
 
 ## Final words
 
-Great! You did it! You learned how to recognize people's emotions at the browser.
+Greate! You did it! You learned how to recognize people's emotions in the browser.
 
 At the top of the page, you can find a working example of an idea.
 Also, [here's the full source code](https://github.com/Tibing/howtomake.software/tree/master/projects/emotion-control/src/lib){:target="blank"}.
+
+The last step is to send recognized emotions to the analytics platform like **google analytics** or **amplitude**.
+Then, you'll be able to juxtapose this data with other analytical info and understand what your users like.
 
 I know that it sounds a bit awkward to ask users about camera access but why not try 😅.
 If you have any thoughts on that stuff, please, let me know.
 
 I'm waiting for your comments about the idea! Please, [reach me on Twitter](https://twitter.com/NikPoltoratsky).
+
+## Resources
+
+- [Reach me on Twitter](https://twitter.com/NikPoltoratsky){:target="blank"}
+- [Full source code of the example above](https://github.com/Tibing/howtomake.software/tree/master/projects/emotion-control/src/lib){:target="blank"}.
+- [Face-api.js docs](https://github.com/justadudewhohacks/face-api.js){:target="blank"}
+
+
