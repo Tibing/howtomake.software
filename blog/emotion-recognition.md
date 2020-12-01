@@ -2,10 +2,10 @@
 article: true
 unlisted: true
 title: Emotion Recognition
-description: Learn how to recognize people's emotions in Angular
+description: Learn how to analyze user's emotions in your Angular app
 date: "2020-11-30T19:11:25Z"
 author: "Nikita Poltoratsky"
-keyword: "angular, rxjs, ngrx"
+keyword: "angular, rxjs, ngrx, face-api.js, ai, recognition, emotion"
 cover: /assets/blog/emotion-recognition/cover.png
 component: 'emotion-recognition'
 ---
@@ -230,8 +230,8 @@ Also, [here's the full source code](https://github.com/Tibing/howtomake.software
 The last step is to send recognized emotions to the analytics platform like **google analytics** or **amplitude**.
 Then, you'll be able to juxtapose this data with other analytical info and understand what your users like.
 
-I know that it sounds a bit awkward to ask users about camera access but why not try 😅.
-If you have any thoughts on that stuff, please, let me know.
+Right now it'll be impossible to implement this idea since everyone cares about his security and doesn't trust websites.
+If you have any thoughts on how to do face recognition completely securely and how to make users trust the website, please, let me know 😅.
 
 I'm waiting for your comments about the idea! Please, [reach me on Twitter](https://twitter.com/NikPoltoratsky).
 
