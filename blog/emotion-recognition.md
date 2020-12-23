@@ -5,7 +5,7 @@ title: Emotion Recognition
 description: Learn how to analyze user's emotions in your Angular app
 date: "2020-11-30T19:11:25Z"
 author: "Nikita Poltoratsky"
-keyword: "angular, rxjs, ngrx, face-api.js, ai, recognition, emotion"
+keyword: "angular, rxjs, ngrx, face-api.js, ai, recognition, emotion, analytics"
 cover: /assets/blog/emotion-recognition/cover.png
 component: 'emotion-recognition'
 ---

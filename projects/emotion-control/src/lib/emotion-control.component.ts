@@ -33,8 +33,8 @@ import { BehaviorSubject } from 'rxjs';
         </div>
 
         <div class="text">
-          <span>Please wait</span>
-          <span>Loading Emotion Detector 😲</span>
+          <span>Please wait. It'll take a few seconds.</span>
+          <span>We need to load emotion detector.</span>
         </div>
       </div>
     </div>
