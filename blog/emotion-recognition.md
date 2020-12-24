@@ -1,6 +1,5 @@
 ---
 article: true
-unlisted: true
 title: Emotion Recognition
 description: Learn how to analyze user's emotions in your Angular app
 date: "2020-11-30T19:11:25Z"
